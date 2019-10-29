@@ -6,37 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".anaekran">
 
-    <TextView
-        android:id="@+id/g_odun"
-        android:layout_width="93dp"
-        android:layout_height="34dp"
-        android:fontFamily="@font/montserrat"
-        android:text="10"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="18sp"
+    <Button
+        android:id="@+id/b_odun2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="İşçi Al"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintHorizontal_bias="0.743"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
-
-    <TextView
-        android:id="@+id/g_odun2"
-        android:layout_width="93dp"
-        android:layout_height="34dp"
-        android:fontFamily="@font/montserrat"
-        android:text="Odun:"
-        android:textAlignment="textEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/g_odun"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintVertical_bias="0.177" />
 
     <Button
         android:id="@+id/b_odun"
@@ -49,5 +29,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.177" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/g_odun2"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat"
+            android:text="Odun:"
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/g_odun"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat"
+            android:text="0"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat"
+            android:text="İşçi:"
+            android:textAlignment="textEnd"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/g_isci"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:fontFamily="@font/montserrat"
+            android:text="0"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
