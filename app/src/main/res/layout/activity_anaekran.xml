@@ -7,16 +7,28 @@
     tools:context=".anaekran">
 
     <Button
-        android:id="@+id/b_odun2"
+        android:id="@+id/b_topla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="İşçi Al"
+        android:text="Kaynak Ara"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintHorizontal_bias="0.796"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintVertical_bias="0.448" />
+
+    <Button
+        android:id="@+id/b_uret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Üret"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.661" />
 
     <Button
         android:id="@+id/b_odun"
@@ -25,12 +37,13 @@
         android:text="ODun Kes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintVertical_bias="0.448" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -42,7 +55,7 @@
 
         <TextView
             android:id="@+id/g_odun2"
-            android:layout_width="60dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:fontFamily="@font/montserrat"
             android:text="Odun:"
@@ -52,7 +65,7 @@
 
         <TextView
             android:id="@+id/g_odun"
-            android:layout_width="50dp"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
             android:fontFamily="@font/montserrat"
             android:text="0"
@@ -61,9 +74,29 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView3"
-            android:layout_width="50dp"
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:fontFamily="@font/montserrat"
+            android:text="Taş:"
+            android:textAlignment="textEnd"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/g_tas"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:fontFamily="@font/montserrat"
+            android:text="0"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
             android:text="İşçi:"
             android:textAlignment="textEnd"
@@ -71,13 +104,40 @@
 
         <TextView
             android:id="@+id/g_isci"
-            android:layout_width="50dp"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
             android:layout_weight="0"
             android:fontFamily="@font/montserrat"
             android:text="0"
             android:textAlignment="textStart"
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:fontFamily="@font/montserrat"
+            android:text="Gün:"
+            android:textAlignment="textEnd"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/g_gun"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:fontFamily="@font/montserrat"
+            android:text="0"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:progressTint="@color/sabah" />
 
     </LinearLayout>
 
