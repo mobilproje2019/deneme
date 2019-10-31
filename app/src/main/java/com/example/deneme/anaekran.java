@@ -80,7 +80,7 @@ public void g_zaman(int s){
     else
         zaman.getProgressDrawable().setColorFilter(Color.parseColor("#42423e"), PorterDuff.Mode.SRC_IN);
     if(g_zaman>15)
-    {g_zaman=0; gun++; g_yaz(g_gun,gun);}
+    {g_zaman=0; gun++; g_yaz(g_gun,gun); zaman.setProgress(g_zaman);}
 }
 
 
@@ -134,6 +134,7 @@ g_zaman(1);
             }
         else
             Toast.makeText(anaekran.this, "Daha Fazla Çalışamazsın Lütfen Uyu", Toast.LENGTH_SHORT).show();
+
         }
     });
 
