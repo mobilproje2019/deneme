@@ -31,6 +31,7 @@ public class anaekran extends AppCompatActivity {
     Button b_odun;
     Button b_topla;
     Button b_uret;
+    Button b_uyu;
     TextView g_odun;
     TextView g_isci;
     TextView g_tas;
@@ -92,6 +93,7 @@ public void g_zaman(int s){
     b_odun=findViewById(R.id.b_odun);
     g_isci=findViewById(R.id.g_isci);
     b_uret=findViewById(R.id.b_uret);
+    b_uyu=findViewById(R.id.b_uyu);
     g_tas=findViewById(R.id.g_tas);
     g_gun=findViewById(R.id.g_gun);
     zaman=findViewById(R.id.progressBar);
@@ -144,5 +146,12 @@ g_zaman(1);
         }
     });
 
+
+    b_uyu.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            g_zaman(16);
+        }
+    });
     }
 }
