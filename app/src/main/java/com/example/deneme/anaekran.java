@@ -28,27 +28,31 @@ import android.view.ViewGroup;
 
 
 public class anaekran extends AppCompatActivity {
+
     Button b_odun;
     Button b_topla;
     Button b_uret;
     Button b_uyu;
+    Button b_bekle;
     TextView g_odun;
     TextView g_isci;
     TextView g_tas;
     TextView g_gun;
     ProgressBar zaman;
 
-    int tas=0;
-    int isci=0;
-    int odun=0;
-    int gun=0;
-    int g_zaman=0;
+    int tas=kaynaklar.tas;
+    int mtas=30;
+    int isci=kaynaklar.isci;
+    int odun=kaynaklar.odun;
+    int modun=60;
+    int gun=kaynaklar.gun;
+    int g_zaman=1;
 
     Timer tiktak = new Timer();
     Handler handler=new Handler();
 
 
-    // Timer Çalıştırığı İşlemler
+    //region Timer Çalıştırdığı İşlemler
     TimerTask tik= new TimerTask() {
         @Override
         public void run() {
@@ -56,20 +60,30 @@ public class anaekran extends AppCompatActivity {
     @Override
     public void run() {
         odun+=isci;
-        g_yaz(g_odun,odun);
+        if(odun>modun)
+            odun=modun;
+        g_yaz(g_odun,odun,modun);
     }
 });
         }
     };
+    //endregion
 
-
-    // Göstergelerin Yazdırıldığı Fonksiyon
-public void g_yaz(TextView g,int sayi){
-    g.setText(String.valueOf(sayi));
+    //region Göstergelerin Yazdırıldığı Fonksiyon
+public void g_yaz(TextView g,int sayi,int maks){
+    if(maks!=0)
+    g.setText(String.valueOf(sayi)+"/"+String.valueOf(maks));
+else
+        g.setText(String.valueOf(sayi));
 }
+//endregion
 
-public void g_zaman(int s){
-    g_zaman+=s;
+    //region Zaman ekleme gösterme fonksiyonu
+public void g_zaman(int s,char m){
+    if(m=='a')
+        g_zaman+=s;
+    else
+        g_zaman=s;
     zaman.setProgress(g_zaman);
     if(g_zaman<5)
         zaman.getProgressDrawable().setColorFilter(Color.parseColor("#ffec1e"), PorterDuff.Mode.SRC_IN);
@@ -80,41 +94,61 @@ public void g_zaman(int s){
     else
         zaman.getProgressDrawable().setColorFilter(Color.parseColor("#42423e"), PorterDuff.Mode.SRC_IN);
     if(g_zaman>15)
-    {g_zaman=0; gun++; g_yaz(g_gun,gun); zaman.setProgress(g_zaman);}
+    {g_zaman=1; gun++; g_yaz(g_gun,gun,0); zaman.setProgress(g_zaman); g_zaman(0,'a');}
 }
+//endregion
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anaekran);
+
+
+
+//region id bağdaştırımı
     b_topla=findViewById(R.id.b_topla);
-    g_odun=findViewById(R.id.g_odun);
     b_odun=findViewById(R.id.b_odun);
-    g_isci=findViewById(R.id.g_isci);
     b_uret=findViewById(R.id.b_uret);
     b_uyu=findViewById(R.id.b_uyu);
+    b_bekle=findViewById(R.id.b_bekle);
+
+    g_odun=findViewById(R.id.g_odun);
+    g_isci=findViewById(R.id.g_isci);
     g_tas=findViewById(R.id.g_tas);
     g_gun=findViewById(R.id.g_gun);
-    zaman=findViewById(R.id.progressBar);
 
+    zaman=findViewById(R.id.progressBar);
+//endregion
+
+//region Başlangıç Yazdrımı
+        g_yaz(g_odun,odun,modun);g_yaz(g_tas,tas,mtas);g_yaz(g_gun,gun,0);
+//endregion
+
+//region Zaman ilk atamaları
     zaman.setMax(15);
     zaman.setProgress(g_zaman);
+    //endregion
 
-        //Timer Parametreleri ve Başlatıcısı
+//region Timer Parametreleri ve Başlatıcısı
     tiktak.schedule(tik,1000,3000);
+//endregion
 
-//Topla Butonu
+//region Topla Butonu
     b_topla.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-           if(g_zaman<13){
+           if(g_zaman+1<13){
             Random rand=new Random();
             tas+=rand.nextInt(2)+1;
             odun+=rand.nextInt(1)+1;
-g_zaman(1);
-            g_yaz(g_odun,odun);
-            g_yaz(g_tas,tas);
+            if(odun>modun)
+                odun=modun;
+            if(tas>mtas)
+                tas=mtas;
+            g_zaman(1,'a');
+            g_yaz(g_odun,odun,modun);
+            g_yaz(g_tas,tas,mtas);
         }
            else
            {
@@ -122,15 +156,19 @@ g_zaman(1);
            }
         }
     });
+    //endregion
 
-//Odun Kes Butonu
+//region Odun Kes Butonu
     b_odun.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            if(g_zaman<13){
-            odun++;
-            g_zaman(3);
-            g_yaz(g_odun,odun);
+            if(g_zaman+3<13){
+                Random random=new Random();
+            odun+=random.nextInt(5)+3;
+            if(odun>modun)
+                odun=modun;
+            g_zaman(3,'a');
+            g_yaz(g_odun,odun,modun);
             }
         else
             Toast.makeText(anaekran.this, "Daha Fazla Çalışamazsın Lütfen Uyu", Toast.LENGTH_SHORT).show();
@@ -138,21 +176,38 @@ g_zaman(1);
         }
     });
 
+//endregion
 
+// region Uyu Butonu
+        b_uyu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                g_zaman(16,'a');
+            }
+        });
+        //endregion
+
+//region Üret Menü Butonu
     b_uret.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
     Intent uret=new Intent(anaekran.this,uret.class);
+    int[] kaynak= {odun,tas,isci,gun};
+    uret.putExtra("veri",kaynak);
     startActivity(uret);
         }
     });
 
+//endregion
 
-    b_uyu.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            g_zaman(16);
-        }
-    });
+//region Bekle butonu
+b_bekle.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        g_zaman(14,'s');
+    }
+});
+//endregion
+
     }
 }
