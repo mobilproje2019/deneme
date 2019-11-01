@@ -41,10 +41,10 @@ public class anaekran extends AppCompatActivity {
     ProgressBar zaman;
 
     int tas=kaynaklar.tas;
-    int mtas=30;
+    int mtas=kaynaklar.mtas;
     int isci=kaynaklar.isci;
     int odun=kaynaklar.odun;
-    int modun=60;
+    int modun=kaynaklar.modun;
     int gun=kaynaklar.gun;
     int g_zaman=1;
 
@@ -192,8 +192,10 @@ public void g_zaman(int s,char m){
         @Override
         public void onClick(View view) {
     Intent uret=new Intent(anaekran.this,uret.class);
-    int[] kaynak= {odun,tas,isci,gun};
-    uret.putExtra("veri",kaynak);
+            kaynaklar.odun=odun;
+            kaynaklar.isci=isci;
+            kaynaklar.tas=tas;
+            kaynaklar.gun=gun;
     startActivity(uret);
         }
     });

@@ -144,7 +144,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/Depo"
+                    android:id="@+id/depo"
                     style="@android:style/Widget.Material.Light.ImageButton"
                     android:layout_width="266dp"
                     android:layout_height="90dp"
@@ -168,7 +168,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/Ev"
+                    android:id="@+id/ev"
                     style="@android:style/Widget.Material.Light.ImageButton"
                     android:layout_width="266dp"
                     android:layout_height="90dp"
@@ -195,7 +195,7 @@
                 android:orientation="horizontal">
 
                 <ImageButton
-                    android:id="@+id/Atolye"
+                    android:id="@+id/atolye"
                     style="@android:style/Widget.Material.Light.ImageButton"
                     android:layout_width="266dp"
                     android:layout_height="90dp"
