@@ -127,6 +127,8 @@ public void g_zaman(int s,char m){
 
 //region Zaman ilk atamaları
     zaman.setMax(15);
+    Intent a=getIntent();
+    g_zaman=a.getIntExtra("gzaman",0);
     zaman.setProgress(g_zaman);
     //endregion
 
@@ -196,6 +198,7 @@ public void g_zaman(int s,char m){
             kaynaklar.isci=isci;
             kaynaklar.tas=tas;
             kaynaklar.gun=gun;
+            uret.putExtra("gzaman",g_zaman);
     startActivity(uret);
         }
     });

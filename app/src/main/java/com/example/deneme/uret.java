@@ -95,11 +95,12 @@ public class uret extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent anaekran=new Intent(uret.this, anaekran.class);
-
+                Intent a=getIntent();
                 kaynaklar.odun=odun;
                 kaynaklar.isci=isci;
                 kaynaklar.tas=tas;
                 kaynaklar.gun=gun;
+                anaekran.putExtra("gzaman",a.getIntExtra("gzaman",0));
                 startActivity(anaekran);
             }
         });
