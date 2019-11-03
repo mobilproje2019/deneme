@@ -8,5 +8,5 @@ public class kaynaklar {
     public static int gun=0;
     public static int modun=60;
     public static int mtas=30;
-
+    public static int g_zaman=1;
 }
