@@ -32,6 +32,8 @@ public class anaekran extends AppCompatActivity {
     Button b_odun;
     Button b_topla;
     Button b_uret;
+    Button b_atolye;
+    Button cheat;
     Button b_uyu;
     Button b_bekle;
     TextView g_odun;
@@ -104,15 +106,14 @@ public void g_zaman(int s,char m){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anaekran);
 
-
-
 //region id bağdaştırımı
     b_topla=findViewById(R.id.b_topla);
     b_odun=findViewById(R.id.b_odun);
+    cheat=findViewById(R.id.cheat);
     b_uret=findViewById(R.id.b_uret);
     b_uyu=findViewById(R.id.b_uyu);
     b_bekle=findViewById(R.id.b_bekle);
-
+    b_atolye=findViewById(R.id.b_atolye);
     g_odun=findViewById(R.id.g_odun);
     g_isci=findViewById(R.id.g_isci);
     g_tas=findViewById(R.id.g_tas);
@@ -120,6 +121,20 @@ public void g_zaman(int s,char m){
 
     zaman=findViewById(R.id.progressBar);
 //endregion
+
+        cheat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                odun=kaynaklar.modun;
+                tas=kaynaklar.mtas;
+            }
+        });
+
+
+        //region Butonların Kapalı Olması
+        if(unlocks.atolye==1)
+        b_atolye.setVisibility(View.INVISIBLE);
+        //endregion
 
 //region Başlangıç Yazdrımı
         g_yaz(g_odun,odun,modun);g_yaz(g_tas,tas,mtas);g_yaz(g_gun,gun,0);

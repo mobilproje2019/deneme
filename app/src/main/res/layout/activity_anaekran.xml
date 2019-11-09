@@ -7,6 +7,18 @@
     tools:context=".anaekran">
 
     <Button
+        android:id="@+id/b_atolye"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atölye"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.856" />
+
+    <Button
         android:id="@+id/b_bekle"
         android:layout_width="91dp"
         android:layout_height="50dp"
@@ -80,7 +92,7 @@
             android:id="@+id/g_odun"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:fontFamily="@font/montserrat"
             android:text="0"
             android:textAlignment="textStart"
@@ -101,7 +113,7 @@
             android:id="@+id/g_tas"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="3"
             android:fontFamily="@font/montserrat"
             android:text="0"
             android:textAlignment="textStart"
@@ -121,7 +133,7 @@
             android:id="@+id/g_isci"
             android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:fontFamily="@font/montserrat"
             android:text="0"
             android:textAlignment="textStart"
@@ -141,20 +153,11 @@
             android:id="@+id/g_gun"
             android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:fontFamily="@font/montserrat"
             android:text="0"
             android:textAlignment="textStart"
             android:textSize="15sp" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:progress="1"
-            android:progressTint="@color/sabah" />
 
     </LinearLayout>
 
@@ -171,5 +174,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/b_uret"
         app:layout_constraintTop_toBottomOf="@+id/b_topla" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:progress="1"
+        android:progressTint="@color/sabah"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.012" />
+
+    <Button
+        android:id="@+id/cheat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Debug"
+        app:layout_constraintBottom_toTopOf="@+id/b_topla"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.21" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

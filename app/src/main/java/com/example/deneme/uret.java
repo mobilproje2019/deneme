@@ -1,7 +1,10 @@
 package com.example.deneme;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.solver.widgets.WidgetContainer;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -10,15 +13,24 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.Array;
+
 public class uret extends AppCompatActivity {
 
     ImageButton depo;
     ImageButton kulube;
+    ImageButton ev;
+    ImageButton atolye;
     TextView g_odun;
     TextView g_isci;
     TextView g_tas;
     TextView g_gun;
     Button b_geri;
+
+    TextView t_depo;
+    TextView t_kk;
+    TextView t_ev;
+    TextView t_atolye;
 
 
     int tas=0;
@@ -61,12 +73,24 @@ public class uret extends AppCompatActivity {
 
         kulube= findViewById(R.id.kucukkulube);
         depo=findViewById(R.id.depo);
+        ev=findViewById(R.id.ev);
+        atolye=findViewById(R.id.atolye);
         b_geri=findViewById(R.id.b_geri);
+        t_depo=findViewById(R.id.t_depo);
+        t_kk=findViewById(R.id.t_kk);
+        t_ev=findViewById(R.id.t_ev);
+        t_atolye=findViewById(R.id.t_atolye);
+
 
         g_odun=findViewById(R.id.g_odun);
         g_isci=findViewById(R.id.g_isci);
         g_tas=findViewById(R.id.g_tas);
         g_gun=findViewById(R.id.g_gun);
+
+
+
+
+        t_depo.setText("\nDepo\n"+String.valueOf(yapilar.yapi[1][0])+" Odun"+" "+String.valueOf(yapilar.yapi[1][1])+" Taş");
 
         //region Verilerin Alınıp Yazdırılması
         odun=kaynaklar.odun;
@@ -85,9 +109,36 @@ public class uret extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                if(yap(0))
+               {
                    yapilar.yapi[1][3]=0;
+                   yapilar.yapi[2][3]=0;
+               }
             }
         });
+        //endregion
+
+        //region ev butonu
+        ev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(yap(2))
+                    yapilar.yapi[3][3]=0;
+            }
+        });
+        //endregion
+
+        //region atolye butonu
+
+        atolye.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+           if(yap(3))
+           {
+               unlocks.atolye=0;
+           }
+            }
+        });
+
         //endregion
 
         // region Geri Butonu
@@ -109,11 +160,29 @@ public class uret extends AppCompatActivity {
         depo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               if(yap(1))
-               {
-                   kaynaklar.modun+=30;
-                   kaynaklar.mtas +=30;
-               }
+                if (yapilar.yapi[1][3]!=1)
+                    if(yapilar.yapi[1][0]<=odun && yapilar.yapi[1][1]<=tas)
+                    {
+                        odun -=yapilar.yapi[1][0];
+                        tas -=yapilar.yapi[1][1];
+
+                        yapilar.yapi[1][4]++;
+
+                        g_yaz(g_odun,odun);
+                        g_yaz(g_tas,tas);
+
+                        kaynaklar.mtas+=60;
+                        kaynaklar.modun+=100+(20*yapilar.yapi[1][4]);
+
+                        yapilar.yapi[1][0]*=1.5*yapilar.yapi[1][4]/2;
+                        yapilar.yapi[1][1]+=50;
+
+                        t_depo.setText("\nDepo\n"+String.valueOf(yapilar.yapi[1][0])+" Odun"+" "+String.valueOf(yapilar.yapi[1][1])+" Taş");
+                    }
+                    else
+                        Toast.makeText(uret.this,"Yetersiz Kaynak",Toast.LENGTH_SHORT).show();
+                else
+                    Toast.makeText(uret.this,"Bu yapı önceden yapılmış yada şuanda kilitli.",Toast.LENGTH_SHORT).show();
             }
         });
 
