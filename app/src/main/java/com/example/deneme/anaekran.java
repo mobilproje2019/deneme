@@ -130,8 +130,7 @@ public void g_zaman(int s,char m){
             }
         });
 
-
-        //region Butonların Kapalı Olması
+//region Butonların Kapalı Olması
         if(unlocks.atolye==1)
         b_atolye.setVisibility(View.INVISIBLE);
         //endregion
@@ -227,5 +226,14 @@ b_bekle.setOnClickListener(new View.OnClickListener() {
 });
 //endregion
 
+//region
+b_atolye.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+        Intent atolye=new Intent(anaekran.this, atolye.class);
+        startActivity(atolye);
+    }
+});
+//endregion
     }
 }

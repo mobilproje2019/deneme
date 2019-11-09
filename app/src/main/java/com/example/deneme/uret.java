@@ -88,8 +88,6 @@ public class uret extends AppCompatActivity {
         g_gun=findViewById(R.id.g_gun);
 
 
-
-
         t_depo.setText("\nDepo\n"+String.valueOf(yapilar.yapi[1][0])+" Odun"+" "+String.valueOf(yapilar.yapi[1][1])+" Taş");
 
         //region Verilerin Alınıp Yazdırılması

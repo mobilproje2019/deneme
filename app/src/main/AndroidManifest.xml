@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".uret"></activity>
+        <activity android:name=".atolye"></activity>
+        <activity android:name=".uret" />
         <activity android:name=".anaekran" />
         <activity android:name=".MainActivity">
             <intent-filter>
