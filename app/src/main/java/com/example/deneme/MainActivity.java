@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         newgame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent anamenu= new Intent(MainActivity.this,anaekran.class);
+                Intent anamenu= new Intent(MainActivity.this,olusturma.class);
                 startActivity(anamenu);
             }
         });

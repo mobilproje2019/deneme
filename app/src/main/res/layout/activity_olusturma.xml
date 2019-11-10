@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".olusturma">
+
+    <EditText
+        android:id="@+id/isim"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="İsmini Gir "
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.225" />
+
+    <Button
+        android:id="@+id/okey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Oluştur"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/isim"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/isim" />
+
+    <RadioGroup
+        android:id="@+id/r_sinif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:checkedButton="@id/m0"
+        app:layout_constraintBottom_toTopOf="@+id/okey"
+        app:layout_constraintEnd_toEndOf="@+id/isim"
+        app:layout_constraintStart_toStartOf="@+id/isim"
+        app:layout_constraintTop_toBottomOf="@+id/isim">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sınıfınızı Seçin\n"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/m0"
+            style="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Savaşçı    (+2 Güç)"
+            android:textSize="25sp" />
+
+        <RadioButton
+            android:id="@+id/m1"
+            style="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Suikastçi  (+2 Çeviklik)"
+            android:textSize="25sp" />
+
+        <RadioButton
+            android:id="@+id/m2"
+            style="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Büyücü     (+2 Zekâ)"
+            android:textSize="25sp" />
+    </RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>
