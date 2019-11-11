@@ -40,13 +40,13 @@ public class olusturma extends AppCompatActivity {
                 karakter.isim = isim.getText().toString();
 
                 if (war.isChecked())
-                    karakter.stat[0]++;
+                    karakter.stat[0] +=2;
 
                 else if (asa.isChecked())
-                    karakter.stat[1]++;
+                    karakter.stat[1]+=2;
 
                 else
-                    karakter.stat[2]++;
+                    karakter.stat[2]+=2;
 
                 Intent anaekran = new Intent(olusturma.this, stat.class);
                 karakter.point=3;

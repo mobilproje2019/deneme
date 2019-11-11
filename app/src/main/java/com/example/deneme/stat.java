@@ -14,8 +14,11 @@ import org.w3c.dom.Text;
 public class stat extends AppCompatActivity {
 
     TextView isim,g_str,g_agi,g_int,g_point;
-    Button ileri,mstr,pstr,magi,pagi,mint,pint;
+
+    Button ileri,mstr,pstr,magi,pagi,mint,pint,i;
+
     int point=karakter.point,str=karakter.stat[0],agi=karakter.stat[0],inte=karakter.stat[2];
+
     public static String k[] = {"Güç:","Çvk:","Zeka:"};
 
     public static void yaz(TextView textView,int i)
@@ -36,6 +39,7 @@ public class stat extends AppCompatActivity {
         g_point=findViewById(R.id.g_point);
 
         ileri=findViewById(R.id.ileri);
+        i= findViewById(R.id.info);
         mstr=findViewById(R.id.mstr);
         pstr=findViewById(R.id.pstr);
         magi=findViewById(R.id.magi);
@@ -143,6 +147,16 @@ public class stat extends AppCompatActivity {
             }
         });
 //endregion
+
+//region i butonu (info)
+i.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+
+    }
+});
+//endregion
+
 
 
     }
