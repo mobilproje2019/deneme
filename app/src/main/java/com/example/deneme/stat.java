@@ -152,7 +152,8 @@ public class stat extends AppCompatActivity {
 i.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-
+    Intent info=new Intent(stat.this,info.class);
+    startActivity(info);
     }
 });
 //endregion
