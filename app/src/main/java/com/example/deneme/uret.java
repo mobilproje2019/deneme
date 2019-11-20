@@ -17,6 +17,9 @@ import java.sql.Array;
 
 public class uret extends AppCompatActivity {
 
+    ImageButton[] b_gosterge;
+    TextView[] t_gosterge;
+
     ImageButton depo;
     ImageButton kulube;
     ImageButton ev;
@@ -45,6 +48,26 @@ public class uret extends AppCompatActivity {
 //endregion
 
 
+    //region Düğme ve textviewlerin görünürlüğü
+    public static void refresh(ImageButton[] b,TextView[] t)
+    {
+        int[][] yapi=yapilar.yapi;
+        for (int i=0;i<yapi.length;i++)
+        {
+            if(yapi[i][3]==1)
+            {
+                b[i].setVisibility(View.INVISIBLE);
+                t[i].setVisibility(View.INVISIBLE);
+            }
+            else
+            {
+                b[i].setVisibility(View.VISIBLE);
+                t[i].setVisibility(View.VISIBLE);
+            }
+        }
+    }
+    //endregion
+
     //region Yapı yapma fonksiyonu
     public boolean yap(int i)
     {
@@ -71,7 +94,7 @@ public class uret extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_uret);
 
-        kulube= findViewById(R.id.kucukkulube);
+        kulube=findViewById(R.id.kucukkulube);
         depo=findViewById(R.id.depo);
         ev=findViewById(R.id.ev);
         atolye=findViewById(R.id.atolye);
@@ -87,8 +110,13 @@ public class uret extends AppCompatActivity {
         g_tas=findViewById(R.id.g_tas);
         g_gun=findViewById(R.id.g_gun);
 
+        b_gosterge=new ImageButton[]{kulube,depo,ev,atolye};
+        t_gosterge=new TextView[]{t_kk,t_depo,t_ev,t_atolye};
+
 
         t_depo.setText("\nDepo\n"+String.valueOf(yapilar.yapi[1][0])+" Odun"+" "+String.valueOf(yapilar.yapi[1][1])+" Taş");
+
+        refresh(b_gosterge,t_gosterge);
 
         //region Verilerin Alınıp Yazdırılması
         odun=kaynaklar.odun;
@@ -110,6 +138,7 @@ public class uret extends AppCompatActivity {
                {
                    yapilar.yapi[1][3]=0;
                    yapilar.yapi[2][3]=0;
+                   refresh(b_gosterge,t_gosterge);
                }
             }
         });
@@ -121,6 +150,7 @@ public class uret extends AppCompatActivity {
             public void onClick(View view) {
                 if(yap(2))
                     yapilar.yapi[3][3]=0;
+                refresh(b_gosterge,t_gosterge);
             }
         });
         //endregion
@@ -133,6 +163,7 @@ public class uret extends AppCompatActivity {
            if(yap(3))
            {
                unlocks.atolye=0;
+               refresh(b_gosterge,t_gosterge);
            }
             }
         });
@@ -176,6 +207,7 @@ public class uret extends AppCompatActivity {
                         yapilar.yapi[1][1]+=50;
 
                         t_depo.setText("\nDepo\n"+String.valueOf(yapilar.yapi[1][0])+" Odun"+" "+String.valueOf(yapilar.yapi[1][1])+" Taş");
+                        refresh(b_gosterge,t_gosterge);
                     }
                     else
                         Toast.makeText(uret.this,"Yetersiz Kaynak",Toast.LENGTH_SHORT).show();
