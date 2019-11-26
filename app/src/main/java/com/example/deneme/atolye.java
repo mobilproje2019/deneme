@@ -15,7 +15,7 @@ public class atolye extends AppCompatActivity {
     TextView g_odun,g_tas,g_dtas,g_tahta,g_cubuk;
 
     int odun=0,tas=0,dtas=0,tahta=0,cubuk=0;
-    int[] kaynak={odun,tas,tahta,dtas,cubuk};
+    int[] kaynak;
 
     //region Yazdırma
     public void g_yaz(TextView g,int sayi)
@@ -44,6 +44,7 @@ public class atolye extends AppCompatActivity {
            {  Toast.makeText(atolye.this,"Araç Başarıyla Yapıldı",Toast.LENGTH_SHORT).show();}
            else
            {
+               Toast.makeText(atolye.this,String.valueOf(kaynak[j]),Toast.LENGTH_SHORT).show();
                Toast.makeText(atolye.this,"Yetersiz Kaynak",Toast.LENGTH_SHORT).show();
                return false;
            }
@@ -82,6 +83,8 @@ public class atolye extends AppCompatActivity {
         tahta=kaynaklar.tahta;
         cubuk=kaynaklar.cubuk;
 
+        kaynak= new int[]{odun, tas, tahta, dtas, cubuk};
+
         // Yazdırma
         g_all();
 //region Tahta Butonu
@@ -92,7 +95,11 @@ public class atolye extends AppCompatActivity {
             {
                 kaynaklar.tahta+=5;
                 kaynaklar.odun-=1;
-                g_yaz(g_odun,odun);
+
+                odun=kaynaklar.odun;
+                tahta=kaynaklar.tahta;
+
+                g_all();
             }
             }
         });
