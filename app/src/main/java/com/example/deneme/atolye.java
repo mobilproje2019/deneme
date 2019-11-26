@@ -36,7 +36,7 @@ public class atolye extends AppCompatActivity {
     //region Üretme Fonksiyonu
     public boolean uret(int i)
     {
-        if(araclar.araclar[i][6]!=1)
+        if(araclar.araclar[i][5]==0)
         {
           for(int j=0;j<araclar.araclar.length-1;j++)
           {
@@ -70,6 +70,12 @@ public class atolye extends AppCompatActivity {
         b_kazma=findViewById(R.id.b_kazma);
         b_kilic=findViewById(R.id.b_kilic);
 
+        g_odun=findViewById(R.id.g_odun);
+        g_tas=findViewById(R.id.g_tas);
+        g_dtas=findViewById(R.id.g_dtas);
+        g_tahta=findViewById(R.id.g_tahta);
+        g_cubuk=findViewById(R.id.g_cubuk);
+
         odun=kaynaklar.odun;
         tas=kaynaklar.tas;
         dtas=kaynaklar.dtas;
@@ -82,7 +88,12 @@ public class atolye extends AppCompatActivity {
         b_tahta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            uret(0);
+            if(uret(0))
+            {
+                kaynaklar.tahta+=5;
+                kaynaklar.odun-=1;
+                g_yaz(g_odun,odun);
+            }
             }
         });
 //endregion
