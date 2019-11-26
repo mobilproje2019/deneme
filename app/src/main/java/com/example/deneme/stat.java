@@ -17,7 +17,7 @@ public class stat extends AppCompatActivity {
 
     Button ileri,mstr,pstr,magi,pagi,mint,pint,i;
 
-    int point=karakter.point,str=karakter.stat[0],agi=karakter.stat[0],inte=karakter.stat[2];
+    int point=karakter.point,str=karakter.stat[0],agi=karakter.stat[1],inte=karakter.stat[2];
 
     public static String k[] = {"Güç:","Çvk:","Zeka:"};
 
