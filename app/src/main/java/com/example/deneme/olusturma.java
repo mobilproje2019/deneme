@@ -35,7 +35,7 @@ public class olusturma extends AppCompatActivity {
         olustur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isim.getText().toString().trim().length() > 3) {
+                if (isim.getText().toString().trim().length() > 2) {
                 karakter.sinif = r_sinif.getCheckedRadioButtonId();
                 karakter.isim = isim.getText().toString();
 

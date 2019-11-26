@@ -97,7 +97,7 @@ public class stat extends AppCompatActivity {
         mstr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(karakter.stat[0]>1)
+                if(karakter.stat[0]>str)
                 {
                     karakter.stat[0]--;
                     point++;
@@ -109,7 +109,7 @@ public class stat extends AppCompatActivity {
         magi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(karakter.stat[1]>1)
+                if(karakter.stat[1]>agi)
                 {
                     karakter.stat[1]--;
                     point++;
@@ -121,7 +121,7 @@ public class stat extends AppCompatActivity {
         mint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(karakter.stat[2]>1)
+                if(karakter.stat[2]>inte)
                 {
                     karakter.stat[2]--;
                     point++;
@@ -140,6 +140,9 @@ public class stat extends AppCompatActivity {
                 if(point>0)
                     Toast.makeText(stat.this,"Lütfen Tüm Yetenek Puanlarını Harcayınız",Toast.LENGTH_SHORT).show();
                 else {
+                    str=karakter.stat[0];
+                    agi=karakter.stat[1];
+                    inte=karakter.stat[2];
                     karakter.point=point;
                     Intent anaekran = new Intent(stat.this, anaekran.class);
                     startActivity(anaekran);
