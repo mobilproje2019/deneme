@@ -209,7 +209,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
                     android:layout_weight="1"
-                    android:text="\nAtolye\n35 Odun 40 Taş"
+                    android:text="\nAtolye\n35 Odun 60 Taş"
                     android:textSize="18sp" />
 
             </LinearLayout>

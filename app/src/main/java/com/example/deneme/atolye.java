@@ -2,20 +2,40 @@ package com.example.deneme;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.view.View;
 import android.widget.Button;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.os.Handler;
+import java.util.TimerTask;
+import java.util.Timer;
+
 
 public class atolye extends AppCompatActivity {
 
+
+    Handler handler = new Handler();
+    Timer timer;
+
     ImageButton b_balta,b_dtas,b_cubuk,b_tahta,b_kazma,b_kilic;
     TextView g_odun,g_tas,g_dtas,g_tahta,g_cubuk;
-
+    TextView tx[];
     int odun=0,tas=0,dtas=0,tahta=0,cubuk=0;
     int[] kaynak;
+
+    //region Renkler
+    public void k(int j)
+    {
+        tx[j].setTextColor(Color.parseColor("#aa0114"));
+    }
+    public void s(int j)
+    {
+        tx[j].setTextColor(Color.parseColor("#000000"));
+    }
+//endregion
 
     //region Yazdırma
     public void g_yaz(TextView g,int sayi)
@@ -41,11 +61,16 @@ public class atolye extends AppCompatActivity {
           for(int j=0;j<araclar.araclar.length-1;j++)
           {
            if(kaynak[j]>=araclar.araclar[i][j])
-           {  Toast.makeText(atolye.this,"Araç Başarıyla Yapıldı",Toast.LENGTH_SHORT).show();}
+           {  }
            else
            {
-               Toast.makeText(atolye.this,String.valueOf(kaynak[j]),Toast.LENGTH_SHORT).show();
-               Toast.makeText(atolye.this,"Yetersiz Kaynak",Toast.LENGTH_SHORT).show();
+               k(j);
+               try {
+                   Thread.sleep(2000);
+               }
+               catch (Exception e)
+               {}
+               s(j);
                return false;
            }
           }
@@ -84,7 +109,7 @@ public class atolye extends AppCompatActivity {
         cubuk=kaynaklar.cubuk;
 
         kaynak= new int[]{odun, tas, tahta, dtas, cubuk};
-
+        tx=new TextView[]{ g_odun,g_tas,g_dtas,g_tahta,g_cubuk};
         // Yazdırma
         g_all();
 //region Tahta Butonu
@@ -105,6 +130,23 @@ public class atolye extends AppCompatActivity {
         });
 //endregion
 
+        //region DTaş Butonu
+        b_dtas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(uret(1))
+                {
+                    kaynaklar.dtas+=5;
+                    kaynaklar.tas-=25;
+
+                    tas=kaynaklar.tas;
+                    dtas=kaynaklar.dtas;
+
+                    g_all();
+                }
+            }
+        });
+        //endregion
 
 
 
