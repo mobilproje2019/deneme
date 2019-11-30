@@ -3,6 +3,7 @@ package com.example.deneme;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.os.Bundle;
@@ -18,13 +19,14 @@ public class atolye extends AppCompatActivity {
 
 
     Handler handler = new Handler();
-    Timer timer;
+    Timer timer=new Timer();
 
     ImageButton b_balta,b_dtas,b_cubuk,b_tahta,b_kazma,b_kilic;
     TextView g_odun,g_tas,g_dtas,g_tahta,g_cubuk;
     TextView tx[];
     int odun=0,tas=0,dtas=0,tahta=0,cubuk=0;
     int[] kaynak;
+
 
     //region Renkler
     public void k(int j)
@@ -60,19 +62,13 @@ public class atolye extends AppCompatActivity {
         {
           for(int j=0;j<araclar.araclar.length-1;j++)
           {
-           if(kaynak[j]>=araclar.araclar[i][j])
-           {  }
-           else
+           if(kaynak[j]<araclar.araclar[i][j])
            {
                k(j);
-               try {
-                   Thread.sleep(2000);
-               }
-               catch (Exception e)
-               {}
-               s(j);
+               tx[j].setTextSize(18);
                return false;
            }
+
           }
         }
         else {
@@ -82,6 +78,16 @@ public class atolye extends AppCompatActivity {
      return true;
     }
     //endregion
+
+
+    //region Kaynak dizi yenilemesi
+    public void yenile()
+    {
+        kaynak=new int[]{odun, tas, tahta, dtas, cubuk};
+    }
+    //endregion
+
+
 
 
     @Override
@@ -108,7 +114,7 @@ public class atolye extends AppCompatActivity {
         tahta=kaynaklar.tahta;
         cubuk=kaynaklar.cubuk;
 
-        kaynak= new int[]{odun, tas, tahta, dtas, cubuk};
+        yenile();
         tx=new TextView[]{ g_odun,g_tas,g_dtas,g_tahta,g_cubuk};
         // Yazdırma
         g_all();
@@ -123,7 +129,7 @@ public class atolye extends AppCompatActivity {
 
                 odun=kaynaklar.odun;
                 tahta=kaynaklar.tahta;
-
+                yenile();
                 g_all();
             }
             }
@@ -141,7 +147,7 @@ public class atolye extends AppCompatActivity {
 
                     tas=kaynaklar.tas;
                     dtas=kaynaklar.dtas;
-
+                    yenile();
                     g_all();
                 }
             }
