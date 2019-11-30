@@ -36,6 +36,7 @@ public class anaekran extends AppCompatActivity {
     Button cheat;
     Button b_uyu;
     Button b_bekle;
+    Button b_maden;
     TextView g_odun;
     TextView g_isci;
     TextView g_tas;
@@ -109,6 +110,7 @@ public void g_zaman(int s,char m){
 //region id bağdaştırımı
     b_topla=findViewById(R.id.b_topla);
     b_odun=findViewById(R.id.b_odun);
+    b_maden=findViewById(R.id.b_maden);
     cheat=findViewById(R.id.cheat);
     b_uret=findViewById(R.id.b_uret);
     b_uyu=findViewById(R.id.b_uyu);
@@ -133,6 +135,10 @@ public void g_zaman(int s,char m){
 //region Butonların Kapalı Olması
         if(unlocks.atolye==1)
         b_atolye.setVisibility(View.INVISIBLE);
+        if(unlocks.balta==1)
+            b_odun.setVisibility(View.INVISIBLE);
+        if(unlocks.maden==1)
+            b_maden.setVisibility(View.INVISIBLE);
         //endregion
 
 //region Başlangıç Yazdrımı
@@ -226,7 +232,7 @@ b_bekle.setOnClickListener(new View.OnClickListener() {
 });
 //endregion
 
-//region
+//region Atölye Butonu
 b_atolye.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {

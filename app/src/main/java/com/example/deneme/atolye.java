@@ -39,6 +39,20 @@ public class atolye extends AppCompatActivity {
     }
 //endregion
 
+    //region Timer Task BURSI 3 SANİYE SONRA KIRMIZI YAZIYI SİYAH YAPMAK İÇİN KULLLANILCAK
+    TimerTask tik= new TimerTask() {
+        @Override
+        public void run() {
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+
+                }
+            });
+        }
+    };
+    //endregion
+
     //region Yazdırma
     public void g_yaz(TextView g,int sayi)
     {
@@ -118,7 +132,8 @@ public class atolye extends AppCompatActivity {
         tx=new TextView[]{ g_odun,g_tas,g_dtas,g_tahta,g_cubuk};
         // Yazdırma
         g_all();
-//region Tahta Butonu
+
+        //region Tahta Butonu
         b_tahta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -154,7 +169,63 @@ public class atolye extends AppCompatActivity {
         });
         //endregion
 
+        //region Çubuk Butonu
+        g_cubuk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(uret(2))
+                {
+                    kaynaklar.cubuk+=5;
+                    kaynaklar.tahta-=2;
 
+                    cubuk=kaynaklar.cubuk;
+                    tahta=kaynaklar.tahta;
+                    yenile();
+                    g_all();
+                }
+            }
+        });
+        //endregion
+
+        //region Balta
+        b_balta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(uret(3))
+                {
+                    kaynaklar.dtas-=5;
+                    kaynaklar.cubuk-=2;
+
+                    cubuk=kaynaklar.cubuk;
+                    dtas=kaynaklar.dtas;
+                    yenile();
+                    araclar.araclar[3][5]=1;
+                    Toast.makeText(atolye.this,"Artık Ağaç Keserek Daha Fazla Odun Elde Edebilirsiniz",Toast.LENGTH_SHORT).show();
+                    g_all();
+                }
+            }
+        });
+        //endregion
+
+        //region Kazma
+        b_kazma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(uret(4))
+                {
+                    kaynaklar.dtas-=8;
+                    kaynaklar.cubuk-=2;
+
+                    cubuk=kaynaklar.cubuk;
+                    dtas=kaynaklar.dtas;
+                    araclar.araclar[4][5]=1;
+                    Toast.makeText(atolye.this,"Artık Madende Taş Kazabilirsiniz",Toast.LENGTH_SHORT).show();
+                    yenile();
+                    g_all();
+                }
+            }
+        });
+        //endregion
 
 
 
