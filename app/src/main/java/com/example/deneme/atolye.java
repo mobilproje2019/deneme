@@ -129,7 +129,7 @@ public class atolye extends AppCompatActivity {
         cubuk=kaynaklar.cubuk;
 
         yenile();
-        tx=new TextView[]{ g_odun,g_tas,g_dtas,g_tahta,g_cubuk};
+        tx=new TextView[]{ g_odun,g_tas,g_tahta,g_dtas,g_cubuk};
         // Yazdırma
         g_all();
 
