@@ -129,6 +129,7 @@ public void g_zaman(int s,char m){
             public void onClick(View view) {
                 odun=kaynaklar.modun;
                 tas=kaynaklar.mtas;
+                g_yaz(g_odun,odun,modun);g_yaz(g_tas,tas,mtas);
             }
         });
 
@@ -238,6 +239,7 @@ b_atolye.setOnClickListener(new View.OnClickListener() {
     public void onClick(View view) {
         Intent atolye=new Intent(anaekran.this, atolye.class);
         startActivity(atolye);
+        g_yaz(g_odun,odun,modun);g_yaz(g_tas,tas,mtas);
     }
 });
 //endregion
