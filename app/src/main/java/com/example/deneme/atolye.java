@@ -200,6 +200,7 @@ public class atolye extends AppCompatActivity {
                     dtas=kaynaklar.dtas;
                     yenile();
                     araclar.araclar[3][5]=1;
+                    unlocks.balta=0;
                     Toast.makeText(atolye.this,"Artık Ağaç Keserek Daha Fazla Odun Elde Edebilirsiniz",Toast.LENGTH_SHORT).show();
                     g_all();
                 }
@@ -219,6 +220,7 @@ public class atolye extends AppCompatActivity {
                     cubuk=kaynaklar.cubuk;
                     dtas=kaynaklar.dtas;
                     araclar.araclar[4][5]=1;
+                    unlocks.maden=0;
                     Toast.makeText(atolye.this,"Artık Madende Taş Kazabilirsiniz",Toast.LENGTH_SHORT).show();
                     yenile();
                     g_all();
