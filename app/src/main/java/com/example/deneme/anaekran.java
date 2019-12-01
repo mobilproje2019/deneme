@@ -100,7 +100,25 @@ public void g_zaman(int s,char m){
     {g_zaman=1; gun++; g_yaz(g_gun,gun,0); zaman.setProgress(g_zaman); g_zaman(0,'a');}
 }
 //endregion
+    void chechunlocks(){
 
+
+    if(unlocks.atolye==1)
+        b_atolye.setVisibility(View.INVISIBLE);
+    if(unlocks.balta==1)
+        b_odun.setVisibility(View.INVISIBLE);
+    if(unlocks.maden==1) {
+        b_maden.setVisibility(View.INVISIBLE);
+    }
+        tas=kaynaklar.tas;
+        mtas=kaynaklar.mtas;
+        isci=kaynaklar.isci;
+        odun=kaynaklar.odun;
+        modun=kaynaklar.modun;
+        gun=kaynaklar.gun;
+        g_zaman=kaynaklar.g_zaman;
+        g_yaz(g_odun,odun,modun);g_yaz(g_tas,tas,mtas);g_yaz(g_gun,gun,0);
+}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,12 +152,7 @@ public void g_zaman(int s,char m){
         });
 
 //region Butonların Kapalı Olması
-        if(unlocks.atolye==1)
-        b_atolye.setVisibility(View.INVISIBLE);
-        if(unlocks.balta==1)
-            b_odun.setVisibility(View.INVISIBLE);
-        if(unlocks.maden==1)
-            b_maden.setVisibility(View.INVISIBLE);
+
         //endregion
 
 //region Başlangıç Yazdrımı
@@ -243,5 +256,10 @@ b_atolye.setOnClickListener(new View.OnClickListener() {
     }
 });
 //endregion
+
+    }
+    public void onResume() {
+        super.onResume();
+       chechunlocks();
     }
 }
