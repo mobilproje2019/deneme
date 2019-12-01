@@ -78,11 +78,11 @@ public class atolye extends AppCompatActivity {
           {
            if(kaynak[j]<araclar.araclar[i][j])
            {
+               Log.v("tag",String.valueOf(kaynak[j])+"  "+String.valueOf(araclar.araclar[i][j]));
                k(j);
                tx[j].setTextSize(18);
                return false;
            }
-
           }
         }
         else {
@@ -170,7 +170,7 @@ public class atolye extends AppCompatActivity {
         //endregion
 
         //region Çubuk Butonu
-        g_cubuk.setOnClickListener(new View.OnClickListener() {
+        b_cubuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(uret(2))

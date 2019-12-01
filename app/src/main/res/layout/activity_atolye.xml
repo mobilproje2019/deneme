@@ -275,6 +275,12 @@
                     android:textAlignment="center"
                     android:textSize="18sp" />
             </LinearLayout>
+
+            <Button
+                android:id="@+id/b_geri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Geri " />
         </LinearLayout>
     </ScrollView>
 
