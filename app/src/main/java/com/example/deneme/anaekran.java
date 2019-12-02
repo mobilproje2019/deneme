@@ -302,6 +302,11 @@ public class anaekran extends AppCompatActivity {
                {
                    Toast.makeText(anaekran.this,"İlk Önce Kılıç Yap",Toast.LENGTH_SHORT) .show();
                }
+               else
+               {
+                   Intent i=new Intent(anaekran.this,dovusdeneme.class);
+                   startActivity(i);
+               }
            }
             }
         });
