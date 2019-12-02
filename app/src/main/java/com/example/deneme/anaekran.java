@@ -280,7 +280,25 @@ public class anaekran extends AppCompatActivity {
         });
 //endregion
 
-
+//region Maden Butonu
+        b_maden.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+           if(unlocks.q1i==1)
+           {
+               Toast.makeText(anaekran.this,"Maden Goblinler Tarafından saldırıya uğramış İlk Önce onları Öldürmen lazım",Toast.LENGTH_SHORT) .show();
+               unlocks.q1i=0;
+           }
+           else
+           {
+               if (unlocks.kilic==1)
+               {
+                   Toast.makeText(anaekran.this,"İlk Önce Kılıç Yap",Toast.LENGTH_SHORT) .show();
+               }
+           }
+            }
+        });
+//endregion
     }
 
     public void onResume() {

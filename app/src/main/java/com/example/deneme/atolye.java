@@ -102,8 +102,6 @@ public class atolye extends AppCompatActivity {
     //endregion
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,6 +125,11 @@ public class atolye extends AppCompatActivity {
         dtas=kaynaklar.dtas;
         tahta=kaynaklar.tahta;
         cubuk=kaynaklar.cubuk;
+
+        if(unlocks.kilic==1)
+            b_kilic.setVisibility(View.INVISIBLE);
+        else
+            b_kilic.setVisibility(View.VISIBLE);
 
         yenile();
         tx=new TextView[]{ g_odun,g_tas,g_tahta,g_dtas,g_cubuk};
@@ -229,7 +232,28 @@ public class atolye extends AppCompatActivity {
         });
         //endregion
 
+        b_kilic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(uret(5))
+                {
+                    kaynaklar.dtas-=9;
+                    kaynaklar.cubuk-=1;
 
+                    cubuk=kaynaklar.cubuk;
+                    dtas=kaynaklar.dtas;
+                    araclar.araclar[5][5]=1;
+                    unlocks.kilic=0;
+                    yenile();
+                    g_all();
+                }
+            }
+        });
+
+
+    }
+    public void onResume() {
+        super.onResume();
 
     }
 }
