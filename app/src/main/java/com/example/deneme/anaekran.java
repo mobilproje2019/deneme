@@ -71,7 +71,6 @@ public class anaekran extends AppCompatActivity {
         }
     };
     //endregion
-
     //region Göstergelerin Yazdırıldığı Fonksiyon
     public void g_yaz(TextView g, int sayi, int maks) {
         if (maks != 0)
@@ -80,7 +79,6 @@ public class anaekran extends AppCompatActivity {
             g.setText(String.valueOf(sayi));
     }
 //endregion
-
     //region Zaman ekleme gösterme fonksiyonu
     public void g_zaman(int s, char m) {
         if (m == 'a')
@@ -106,7 +104,6 @@ public class anaekran extends AppCompatActivity {
     }
 
     //endregion
-
     //region Checkunlocks
     void checkunlocks() {
         if (unlocks.atolye == 1)
