@@ -14,6 +14,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -166,6 +167,12 @@ public class anaekran extends AppCompatActivity {
                 tas = kaynaklar.mtas;
                 g_yaz(g_odun, odun, modun);
                 g_yaz(g_tas, tas, mtas);
+                WarriorStat wrr = new WarriorStat();
+                goblin g = new goblin();
+                fight a = new fight();
+               String enemy = a.War(wrr,g,1);
+               Log.v("enemy",enemy);
+
             }
         });
 
