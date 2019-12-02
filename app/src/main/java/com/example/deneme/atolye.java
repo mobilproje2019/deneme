@@ -126,10 +126,6 @@ public class atolye extends AppCompatActivity {
         tahta=kaynaklar.tahta;
         cubuk=kaynaklar.cubuk;
 
-        if(unlocks.kilic==1)
-            b_kilic.setVisibility(View.INVISIBLE);
-        else
-            b_kilic.setVisibility(View.VISIBLE);
 
         yenile();
         tx=new TextView[]{ g_odun,g_tas,g_tahta,g_dtas,g_cubuk};
@@ -232,6 +228,7 @@ public class atolye extends AppCompatActivity {
         });
         //endregion
 
+        //region Kilic
         b_kilic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -249,7 +246,7 @@ public class atolye extends AppCompatActivity {
                 }
             }
         });
-
+        //endregion
 
     }
     public void onResume() {
