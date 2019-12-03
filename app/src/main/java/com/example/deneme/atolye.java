@@ -78,7 +78,6 @@ public class atolye extends AppCompatActivity {
           {
            if(kaynak[j]<araclar.araclar[i][j])
            {
-               Log.v("tag",String.valueOf(kaynak[j])+"  "+String.valueOf(araclar.araclar[i][j]));
                k(j);
                tx[j].setTextSize(18);
                return false;

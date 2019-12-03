@@ -280,9 +280,13 @@ public class anaekran extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent atolye = new Intent(anaekran.this, atolye.class);
-                startActivity(atolye);
+                kaynaklar.odun = odun;
+                kaynaklar.isci = isci;
+                kaynaklar.tas = tas;
+                kaynaklar.gun = gun;
                 g_yaz(g_odun, odun, modun);
                 g_yaz(g_tas, tas, mtas);
+                startActivity(atolye);
             }
         });
 //endregion

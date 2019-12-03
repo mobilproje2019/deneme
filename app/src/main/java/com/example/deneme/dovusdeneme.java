@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class dovusdeneme extends AppCompatActivity {
 
-    TextView isim;
+    TextView isim,history;
     ProgressBar g_hp;
     ListView list;
     Button atak;
@@ -25,8 +25,9 @@ public class dovusdeneme extends AppCompatActivity {
     int dusman=1;
     int tur=0;
     int dhp=100;
-    List log;
-    ListView listView;
+    String log="";
+
+
 
     public void dusmanvurus() {
         for (int i = 0; i < dusman; i++) {
@@ -34,7 +35,7 @@ public class dovusdeneme extends AppCompatActivity {
 
             int hasar = rnd.nextInt(10 + d_seviye * 2) + 1 + d_seviye * 3;
 
-            log.add("Düşman "+hasar+" kadar vurdu.\n");
+            log+=("Düşman "+hasar+" kadar vurdu.\n");
             hp -=hasar;
 
             goster();
@@ -44,10 +45,9 @@ public class dovusdeneme extends AppCompatActivity {
 public void goster()
 {
     isim.setText(karakter.isim);
+    history.setText(log);
     g_hp.setProgress(hp);
-    ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, android.R.id.text1,log);
 
-    listView.setAdapter(adapter);
 
 }
     @Override
@@ -55,13 +55,10 @@ public void goster()
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dovusdeneme);
 
+        history=findViewById(R.id.history);
         isim=findViewById(R.id.g_ad);
         g_hp=findViewById(R.id.g_hp);
         atak=findViewById(R.id.b_attack);
-        listView= findViewById(R.id.dlog);
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, android.R.id.text1,log);
-
-        listView.setAdapter(adapter);
 
     goster();
 
