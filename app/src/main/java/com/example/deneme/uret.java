@@ -6,6 +6,8 @@ import androidx.constraintlayout.solver.widgets.WidgetContainer;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
@@ -138,6 +140,7 @@ public class uret extends AppCompatActivity {
                {
                    yapilar.yapi[1][3]=0;
                    yapilar.yapi[2][3]=0;
+                   unlocks.kk=0;
                    refresh(b_gosterge,t_gosterge);
                }
             }
@@ -150,6 +153,7 @@ public class uret extends AppCompatActivity {
             public void onClick(View view) {
                 if(yap(2))
                     yapilar.yapi[3][3]=0;
+                unlocks.ev=0;
                 refresh(b_gosterge,t_gosterge);
             }
         });

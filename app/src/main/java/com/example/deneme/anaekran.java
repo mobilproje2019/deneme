@@ -1,6 +1,7 @@
 package com.example.deneme;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.app.FragmentManager;
@@ -43,6 +44,7 @@ public class anaekran extends AppCompatActivity {
     TextView g_tas;
     TextView g_gun;
     ProgressBar zaman;
+    public static ConstraintLayout nesne;
 
     int tas = kaynaklar.tas;
     int mtas = kaynaklar.mtas;
@@ -124,6 +126,13 @@ public class anaekran extends AppCompatActivity {
         else
             b_maden.setVisibility(View.VISIBLE);
 
+        if (unlocks.kk == 0)
+        {
+            nesne.setBackgroundResource(R.drawable.map);
+            if(unlocks.ev==0)
+                nesne.setBackgroundResource(R.drawable.map1);
+        }
+
         tas = kaynaklar.tas;
         mtas = kaynaklar.mtas;
         isci = kaynaklar.isci;
@@ -158,6 +167,8 @@ public class anaekran extends AppCompatActivity {
         g_gun = findViewById(R.id.g_gun);
 
         zaman = findViewById(R.id.progressBar);
+
+        nesne=findViewById(R.id.back);
 //endregion
 
         cheat.setOnClickListener(new View.OnClickListener() {
