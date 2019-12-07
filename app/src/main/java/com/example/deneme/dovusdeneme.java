@@ -23,40 +23,34 @@ public class dovusdeneme extends AppCompatActivity {
     LinearLayout layout;
     ScrollView scrollView;
 
-    TextView isim,history;
+    TextView isim,g_tur,dhp;
     ProgressBar g_hp;
     ListView list;
     ArrayAdapter<String> adapter;
     Button atak;
+
     int d_seviye=1;
     int hp=100;
-    int dusman=1;
-    int tur=0;
-    int dhp=100;
+    int dusmans= 1;
+    int tur=1;
+    int dusmansayisi=0;
+    int [][] dusman;
     ArrayList<String> log;
 
     public void dusmanvurus() {
-        if (hp > 0) {
-
-
-        for (int i = 0; i < dusman; i++) {
+        for (int i = 0; i < dusmans; i++) {
             Random rnd = new Random();
 
             int hasar = rnd.nextInt(10 + d_seviye * 2) + 1 + d_seviye * 3;
 
-            log.add("Düşman " + String.valueOf(hasar) + " kadar hasar verdi.");
-            hp -= hasar;
+            log.add("Düşman "+String.valueOf(hasar)+" kadar hasar verdi.");
+            hp -=hasar;
 
             goster();
         }
+        tur++;
     }
-        else
-        {
-            log.add("Kaybettiniz");
-            goster();
-        }
-    }
-
+//region Göster
 public void goster()
 {
     isim.setText(karakter.isim);
@@ -65,14 +59,34 @@ public void goster()
     {
         log.remove(0);
     }
+    g_tur.setText("Tur:"+tur);
+    dhp.setText("Düşman:"+dusman[dusmansayisi][0]);
     adapter.notifyDataSetChanged();
-
 }
+//endregion
+
+//region Düşman Oluşması
+    public void dusmanolustur(int sayi,int tip, int makslevel)
+    {
+       dusman=new int[sayi][3];        //hp , atak , skill tur
+        for(int i=0;i<sayi;i++)
+        {
+            Random rnd =new Random();
+        int seviye=rnd.nextInt(makslevel)+makslevel/2+1;
+       dusman[i][0] = com.example.deneme.dusman.dusman[tip][1] + seviye*2;
+       dusman[i][1]=com.example.deneme.dusman.dusman[tip][2] + seviye*2;
+       dusman[i][2]= com.example.deneme.dusman.dusman[tip][3];
+        }
+    }
+//endregion
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dovusdeneme);
 
+        g_tur=findViewById(R.id.tur);
+        dhp=findViewById(R.id.dhp);
         list=findViewById(R.id.liste);
         log= new ArrayList<String>();
         isim=findViewById(R.id.g_ad);
@@ -86,18 +100,36 @@ public void goster()
 
         list.setAdapter(adapter);
 
+        dusmanolustur(1,1,5);
 
         goster();
 
+//region Attack
         atak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Random rnd=new Random();
-                dhp -=rnd.nextInt(karakter.stat[0]+20)+1+karakter.stat[0]*3;
+                int hit=rnd.nextInt(karakter.stat[0]+20)+1+karakter.stat[0]*3;
+                dusman[dusmansayisi][0] -=hit;
+                log.add("Düşmana" + String.valueOf(hit) +" kadar hasar verdiniz");
                 dusmanvurus();
-                tur++;
+                if(dusman[dusmansayisi][0]<1)
+                {
+                    if(dusmansayisi != dusmans-1)
+                    dusmansayisi++;
+                    else
+                      kazandın();
+                }
                 goster();
             }
         });
     }
+//endregion
+
+    public  void kazandın()
+    {
+        Toast.makeText(dovusdeneme.this,"KAZANDIN!",Toast.LENGTH_SHORT).show();
+    }
+
+
 }

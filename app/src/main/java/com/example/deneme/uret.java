@@ -151,9 +151,10 @@ public class uret extends AppCompatActivity {
         ev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(yap(2))
-                    yapilar.yapi[3][3]=0;
-                unlocks.ev=0;
+                if(yap(2)) {
+                    yapilar.yapi[3][3] = 0;
+                    unlocks.ev = 0;
+                }
                 refresh(b_gosterge,t_gosterge);
             }
         });
