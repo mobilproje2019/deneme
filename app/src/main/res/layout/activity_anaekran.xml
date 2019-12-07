@@ -15,10 +15,10 @@
         android:text="Atölye"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.856" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <Button
         android:id="@+id/b_bekle"
@@ -27,46 +27,52 @@
         android:text="Bekle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.749"
+        app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.84" />
+        app:layout_constraintVertical_bias="0.859" />
 
     <Button
         android:id="@+id/b_topla"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kaynak Ara"
+        android:layout_width="65dp"
+        android:layout_height="62dp"
+        android:background="@drawable/ara"
+        android:textAlignment="center"
+        android:textColor="@color/ogle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.796"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.448" />
+        app:layout_constraintVertical_bias="0.385" />
 
     <Button
         android:id="@+id/b_uret"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="54dp"
+        android:layout_height="52dp"
+        android:background="@drawable/uret2"
         android:text="Üret"
+        android:textColor="@color/ogle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.661" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <Button
         android:id="@+id/b_odun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Odun Kes"
+        android:layout_width="66dp"
+        android:layout_height="62dp"
+        android:background="@drawable/odunkes"
+        android:text="Odun kes"
+        android:textColor="@color/ogle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.448" />
+        app:layout_constraintVertical_bias="0.856" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -178,10 +184,10 @@
         android:text="Uyu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
-        app:layout_constraintStart_toEndOf="@+id/b_uret"
+        app:layout_constraintHorizontal_bias="0.544"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.975" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -212,14 +218,16 @@
 
     <Button
         android:id="@+id/b_maden"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="65dp"
+        android:layout_height="56dp"
+        android:background="@drawable/maden"
         android:text="Maden"
+        android:textColor="@color/ogle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintHorizontal_bias="0.64"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.285" />
+        app:layout_constraintVertical_bias="0.102" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

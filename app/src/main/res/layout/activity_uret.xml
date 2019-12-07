@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/uret"
     tools:context=".uret">
 
     <ScrollView
@@ -136,6 +137,7 @@
                     android:layout_height="90dp"
                     android:layout_weight="1"
                     android:text="\nKüçük Kulübe \n35 Odun"
+                    android:textColor="@color/design_default_color_primary_dark"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -159,6 +161,7 @@
                     android:layout_height="90dp"
                     android:layout_weight="1"
                     android:text="\nDepo\n60 Odun "
+                    android:textColor="@color/design_default_color_primary_dark"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -185,6 +188,7 @@
                     android:lineSpacingExtra="0sp"
                     android:text="\nEv\n75 Odun 60 Taş"
                     android:textAlignment="gravity"
+                    android:textColor="@color/design_default_color_primary_dark"
                     android:textSize="18sp" />
 
             </LinearLayout>
@@ -210,6 +214,7 @@
                     android:layout_height="90dp"
                     android:layout_weight="1"
                     android:text="\nAtolye\n35 Odun 60 Taş"
+                    android:textColor="@color/design_default_color_primary_dark"
                     android:textSize="18sp" />
 
             </LinearLayout>
