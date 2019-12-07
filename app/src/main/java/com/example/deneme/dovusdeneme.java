@@ -36,14 +36,23 @@ public class dovusdeneme extends AppCompatActivity {
     ArrayList<String> log;
 
     public void dusmanvurus() {
+        if (hp > 0) {
+
+
         for (int i = 0; i < dusman; i++) {
             Random rnd = new Random();
 
             int hasar = rnd.nextInt(10 + d_seviye * 2) + 1 + d_seviye * 3;
 
-            log.add("Düşman "+String.valueOf(hasar)+" kadar hasar verdi.");
-            hp -=hasar;
+            log.add("Düşman " + String.valueOf(hasar) + " kadar hasar verdi.");
+            hp -= hasar;
 
+            goster();
+        }
+    }
+        else
+        {
+            log.add("Kaybettiniz");
             goster();
         }
     }
