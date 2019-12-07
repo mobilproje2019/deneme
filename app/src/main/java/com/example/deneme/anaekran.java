@@ -128,9 +128,9 @@ public class anaekran extends AppCompatActivity {
 
         if (unlocks.kk == 0)
         {
-            nesne.setBackgroundResource(R.drawable.map);
+            nesne.setBackgroundResource(R.drawable.m2);
             if(unlocks.ev==0)
-                nesne.setBackgroundResource(R.drawable.map1);
+                nesne.setBackgroundResource(R.drawable.m3);
         }
 
         tas = kaynaklar.tas;
@@ -178,12 +178,6 @@ public class anaekran extends AppCompatActivity {
                 tas = kaynaklar.mtas;
                 g_yaz(g_odun, odun, modun);
                 g_yaz(g_tas, tas, mtas);
-                WarriorStat wrr = new WarriorStat();
-                goblin g = new goblin();
-                fight a = new fight();
-               String enemy = a.War(wrr,g,1);
-               Log.v("enemy",enemy);
-
             }
         });
 
