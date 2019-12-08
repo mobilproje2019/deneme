@@ -73,9 +73,9 @@ public void goster()
         {
             Random rnd =new Random();
         int seviye=rnd.nextInt(makslevel)+makslevel/2+1;
-       dusman[i][0] = com.example.deneme.dusman.dusman[tip][1] + seviye*2;
-       dusman[i][1]=com.example.deneme.dusman.dusman[tip][2] + seviye*2;
-       dusman[i][2]= com.example.deneme.dusman.dusman[tip][3];
+      // dusman[i][0] = com.example.deneme.dusman.dusman[tip][1] + seviye*2;
+      // dusman[i][1]=com.example.deneme.dusman.dusman[tip][2] + seviye*2;
+      // dusman[i][2]= com.example.deneme.dusman.dusman[tip][3];
         }
     }
 //endregion

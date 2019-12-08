@@ -51,7 +51,31 @@ public class olusturma extends AppCompatActivity {
                 Intent anaekran = new Intent(olusturma.this, stat.class);
                 karakter.point=3;
                 startActivity(anaekran);
-            }
+            }else if(isim.getText().toString().equals("A"))
+                {
+                    //region Admin Mod
+                    karakter.isim = isim.getText().toString();
+                    karakter.sinif = r_sinif.getCheckedRadioButtonId();
+                    yapilar.yapi[1][3]=0;
+                    yapilar.yapi[2][3]=0;
+                    unlocks.kk=0;
+                    yapilar.yapi[3][3] = 0;
+                    unlocks.ev = 0;
+                    unlocks.atolye=0;
+                    unlocks.balta=0;
+                    unlocks.kilic=0;
+                    unlocks.maden=0;
+                    kaynaklar.mtas=9999;
+                    kaynaklar.modun=9999;
+                    kaynaklar.dtas=9999;
+                    kaynaklar.cubuk=9999;
+                    kaynaklar.tahta=9999;
+                    Intent anaekran = new Intent(olusturma.this, stat.class);
+                    karakter.point=0;
+                    startActivity(anaekran);
+                    //endregion
+
+                }
                 else
                 Toast.makeText(olusturma.this,"İsiminiz Minimum 3 karakterden oluşmalı",Toast.LENGTH_SHORT).show();
             }
