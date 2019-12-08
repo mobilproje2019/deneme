@@ -31,7 +31,7 @@ public class dovusdeneme extends AppCompatActivity {
     Button atak,yetenek;
 
     int d_seviye=1;
-    int hp=100;
+    int hp=karakter.hp;
     int dusmans= 1;
     int tur=1;
     int dusmansayisi=0;
@@ -98,6 +98,7 @@ public void goster()
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dovusdeneme);
 
+        yetenek=findViewById(R.id.skill);
         g_tur = findViewById(R.id.tur);
         dhp = findViewById(R.id.dhp);
         list = findViewById(R.id.liste);

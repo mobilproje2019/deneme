@@ -129,10 +129,13 @@ public class anaekran extends AppCompatActivity {
         if (unlocks.kk == 0)
         {
             nesne.setBackgroundResource(R.drawable.m2);
+            if(yapilar.yapi[1][4]>0)
+            {
+                nesne.setBackgroundResource(R.drawable.m21);
+            }
             if(unlocks.ev==0)
                 nesne.setBackgroundResource(R.drawable.m3);
         }
-
         tas = kaynaklar.tas;
         mtas = kaynaklar.mtas;
         isci = kaynaklar.isci;

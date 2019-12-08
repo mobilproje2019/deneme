@@ -39,15 +39,21 @@ public class olusturma extends AppCompatActivity {
                 karakter.sinif = r_sinif.getCheckedRadioButtonId();
                 karakter.isim = isim.getText().toString();
 
-                if (war.isChecked())
-                    karakter.stat[0] +=2;
-
-                else if (asa.isChecked())
-                    karakter.stat[1]+=2;
-
-                else
-                    karakter.stat[2]+=2;
-
+                if (war.isChecked()) {
+                    karakter.stat[0] += 2;
+                    karakter.pasif=0;
+                    karakter.skills=karakter.warrior;
+                }
+                else if (asa.isChecked()){
+                karakter.stat[1]+=2;
+                karakter.pasif=1;
+                karakter.skills=karakter.assassin;
+                }
+                else {
+                    karakter.stat[2] += 2;
+                    karakter.pasif=2;
+                    karakter.skills=karakter.mage;
+                }
                 Intent anaekran = new Intent(olusturma.this, stat.class);
                 karakter.point=3;
                 startActivity(anaekran);
