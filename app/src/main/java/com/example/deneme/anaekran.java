@@ -238,6 +238,7 @@ public class anaekran extends AppCompatActivity {
                         odun = modun;
                     g_zaman(3, 'a');
                     g_yaz(g_odun, odun, modun);
+                    kaynaklar.odun=odun;
                 } else
                     Toast.makeText(anaekran.this, "Daha Fazla Çalışamazsın Lütfen Uyu", Toast.LENGTH_SHORT).show();
 
@@ -313,8 +314,30 @@ public class anaekran extends AppCompatActivity {
                }
                else
                {
+                 //region GÖREV TAMAM DEĞİLSE
+
+                   if(unlocks.q1 ==1){
                    Intent i=new Intent(anaekran.this,dovusdeneme.class);
-                   startActivity(i);
+                   startActivity(i);}
+                 //endregion
+
+                 //region Görev Tamalanmışsa
+                   else
+                   {
+                       if (g_zaman + 3 < 13) {
+                           Random random = new Random();
+                           tas += random.nextInt(5) + 3;
+                           if (tas > mtas)
+                               tas = mtas;
+                           g_zaman(3, 'a');
+                           g_yaz(g_tas, tas, mtas);
+                           kaynaklar.tas=tas;
+                       }
+                       else
+                           Toast.makeText(anaekran.this, "Daha Fazla Çalışamazsın Lütfen Uyu", Toast.LENGTH_SHORT).show();
+
+                   }
+                   //endregion
                }
            }
             }

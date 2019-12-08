@@ -2,6 +2,7 @@ package com.example.deneme;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +28,7 @@ public class dovusdeneme extends AppCompatActivity {
     ProgressBar g_hp;
     ListView list;
     ArrayAdapter<String> adapter;
-    Button atak;
+    Button atak,yetenek;
 
     int d_seviye=1;
     int hp=100;
@@ -37,6 +38,8 @@ public class dovusdeneme extends AppCompatActivity {
     int [][] dusman;
     ArrayList<String> log;
 
+//region Düşman vuruş
+
     public void dusmanvurus() {
         for (int i = 0; i < dusmans; i++) {
             Random rnd = new Random();
@@ -45,11 +48,18 @@ public class dovusdeneme extends AppCompatActivity {
 
             log.add("Düşman "+String.valueOf(hasar)+" kadar hasar verdi.");
             hp -=hasar;
+            if(hp<=0)
+            {
+                hp=0;
 
+            }
             goster();
         }
         tur++;
     }
+
+    //endregion
+
 //region Göster
 public void goster()
 {
@@ -62,6 +72,9 @@ public void goster()
     g_tur.setText("Tur:"+tur);
     dhp.setText("Düşman:"+dusman[dusmansayisi][0]);
     adapter.notifyDataSetChanged();
+
+
+
 }
 //endregion
 
@@ -85,14 +98,14 @@ public void goster()
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dovusdeneme);
 
-        g_tur=findViewById(R.id.tur);
-        dhp=findViewById(R.id.dhp);
-        list=findViewById(R.id.liste);
-        log= new ArrayList<String>();
-        isim=findViewById(R.id.g_ad);
-        g_hp=findViewById(R.id.g_hp);
-        atak=findViewById(R.id.b_attack);
-        adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,android.R.id.text1,log);
+        g_tur = findViewById(R.id.tur);
+        dhp = findViewById(R.id.dhp);
+        list = findViewById(R.id.liste);
+        log = new ArrayList<String>();
+        isim = findViewById(R.id.g_ad);
+        g_hp = findViewById(R.id.g_hp);
+        atak = findViewById(R.id.b_attack);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, log);
 
         log.add(" ");
         log.add(" ");
@@ -100,7 +113,7 @@ public void goster()
 
         list.setAdapter(adapter);
 
-        dusmanolustur(1,1,5);
+        dusmanolustur(1, 1, 5);
 
         goster();
 
@@ -108,28 +121,39 @@ public void goster()
         atak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Random rnd=new Random();
-                int hit=rnd.nextInt(karakter.stat[0]+20)+1+karakter.stat[0]*3;
-                dusman[dusmansayisi][0] -=hit;
-                log.add("Düşmana" + String.valueOf(hit) +" kadar hasar verdiniz");
+                Random rnd = new Random();
+                int hit = rnd.nextInt(karakter.stat[0] + 20) + 1 + karakter.stat[0] * 3;
+                dusman[dusmansayisi][0] -= hit;
+                log.add("Düşmana" + String.valueOf(hit) + " kadar hasar verdiniz");
                 dusmanvurus();
-                if(dusman[dusmansayisi][0]<1)
-                {
-                    if(dusmansayisi != dusmans-1)
-                    dusmansayisi++;
+                if (dusman[dusmansayisi][0] < 1) {
+                    if (dusmansayisi != dusmans - 1)
+                        dusmansayisi++;
                     else
-                      kazandın();
+                        kazandın();
                 }
                 goster();
             }
         });
+        //endregion
+    }
+
+    //region KAzanma
+    public  void kazandın()
+    {
+        Toast.makeText(dovusdeneme.this,"Madendeki Goblinleri Yenerek Madeni Güvenli Bir Hale Getirdin ve Esirleri Kurtardın. İçlerinden Biri Demirci olduğunu söylüyor",Toast.LENGTH_SHORT).show();
+        unlocks.q1=0;
     }
 //endregion
 
-    public  void kazandın()
-    {
-        Toast.makeText(dovusdeneme.this,"KAZANDIN!",Toast.LENGTH_SHORT).show();
-    }
 
+    //region kaybeyme
+    public void kaybetme()
+    {
+        Toast.makeText(dovusdeneme.this, "Kritik bir yara aldın fakat kaçmayı başardın", Toast.LENGTH_SHORT).show();
+        Intent geridonus=new Intent(dovusdeneme.this,anaekran.class);
+        startActivity(geridonus);
+    }
+    //endregion
 
 }
