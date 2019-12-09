@@ -16,7 +16,7 @@ public class karakter {
 
     public static int[][] skills={};
 
-
+// çok karışık burası
     public static int[][] assassin={
             {0,50,0,0,3},               //seviye  , Hasar , İyileştirme , Etki , TUR
             {2,80,0,0,5},

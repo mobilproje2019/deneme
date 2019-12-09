@@ -31,6 +31,7 @@ import android.view.ViewGroup;
 
 public class anaekran extends AppCompatActivity {
 
+    //region Butonlar , TetxViewlar
     Button b_odun;
     Button b_topla;
     Button b_uret;
@@ -44,6 +45,7 @@ public class anaekran extends AppCompatActivity {
     TextView g_tas;
     TextView g_gun;
     ProgressBar zaman;
+    //endregion
     public static ConstraintLayout nesne;
 
     int tas = kaynaklar.tas;
@@ -155,7 +157,7 @@ public class anaekran extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anaekran);
 
-//region id bağdaştırımı
+    //region id bağdaştırımı
         b_topla = findViewById(R.id.b_topla);
         b_odun = findViewById(R.id.b_odun);
         b_maden = findViewById(R.id.b_maden);
