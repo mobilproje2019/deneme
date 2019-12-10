@@ -12,7 +12,7 @@ public class dusman {
             // tip , hasar , iyileşme , etki (confuse stun vs)
             {0,25,0,0},
             {1,55,0,0},
-            {2,0,50,0}
+            {2,0,50,2}
     };
 
 }
