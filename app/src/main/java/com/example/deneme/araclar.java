@@ -11,3 +11,4 @@ public class araclar {
             {0, 0, 0, 9, 1, 0},
     };
 }
+
