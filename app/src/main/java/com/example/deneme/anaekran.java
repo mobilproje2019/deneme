@@ -25,14 +25,11 @@ public class anaekran extends AppCompatActivity {
     Button b_uret;
     Button b_atolye;
     Button cheat;
-    Button b_uyu;
-    Button b_bekle;
     Button b_maden;
     TextView g_odun;
     TextView g_isci;
     TextView g_tas;
     TextView g_gun;
-    ProgressBar zaman;
     //endregion
     public static ConstraintLayout nesne;
 
@@ -133,11 +130,9 @@ public class anaekran extends AppCompatActivity {
         g_isci = findViewById(R.id.g_isci);
         g_tas = findViewById(R.id.g_tas);
         g_gun = findViewById(R.id.g_gun);
-
-
         nesne=findViewById(R.id.back);
 //endregion
-
+//region DEBUG Butonu
         cheat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -147,27 +142,12 @@ public class anaekran extends AppCompatActivity {
                 g_yaz(g_tas, tas, maxtas);
             }
         });
-
-//region Butonların Kapalı Olması
-        if (unlocks.atolye == 1)
-            b_atolye.setVisibility(View.INVISIBLE);
-        if (unlocks.balta == 1)
-            b_odun.setVisibility(View.INVISIBLE);
-        if (unlocks.maden == 1)
-            b_maden.setVisibility(View.INVISIBLE);
-        //endregion
-
-//region Başlangıç Yazdrımı
+//endregion
+//region Başlangıç Yazdırımı
         g_yaz(g_odun, odun, maxodun);
         g_yaz(g_tas, tas, maxtas);
         g_yaz(g_gun, gun, 0);
 //endregion
-
-//region Zaman ilk atamaları
-        zaman.setMax(15);
-        zaman.setProgress(g_zaman);
-        //endregion
-
 //region Timer Parametreleri ve Başlatıcısı
         tiktak.schedule(tik, 1000, 3000);
 //endregion
