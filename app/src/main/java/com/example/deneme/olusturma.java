@@ -57,7 +57,7 @@ public class olusturma extends AppCompatActivity {
                 Intent anaekran = new Intent(olusturma.this, stat.class);
                 karakter.point=3;
                 startActivity(anaekran);
-            }else if(isim.getText().toString().equals("A"))
+            }else if(isim.getText().toString().equals("A") || isim.getText().toString().equals("a"))
                 {
                     //region Admin Mod
                     karakter.isim = isim.getText().toString();

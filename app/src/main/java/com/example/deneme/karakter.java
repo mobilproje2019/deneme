@@ -22,23 +22,24 @@ public class karakter {
             {R.drawable.magepasif,R.drawable.mages1,R.drawable.mages2,R.drawable.mages3}
     };
     public  static String[][] aciklama={
-        {"\tSavaşçının Azmi: Eğer canın %15'in altına düşerse eksik canınızın %20 i kadar Saldırı Gücü kazanırsın.",
-                "\tAğır Darbe: Rakibe ağır bir darbe indirerek 1 tur boyunca sana saldıramaz hale getirirsin.\n\tMin Damage:100\tEtki:Stun\tTur:3",
-                "\tSaf Güç: Rakibe atılarak fiziksel bir darbe indirirsin.\n\tMin Damage:120\tTur:4",
-                "\tKafa Kıran: Rakibin kafasına ağır bir darbe indirirsin.\n\tMin Damage:200\tTur:6"
+
+        {"\n\tSavaşçının Azmi","Eğer canın %15'in altına düşerse eksik canınızın %20 i kadar Saldırı Gücü kazanırsın.",
+                "\n\tAğır Darbe","Rakibe ağır bir darbe indirerek 1 tur boyunca sana saldıramaz hale getirirsin.\n\tMin Damage:100\tEtki:Stun\tTur:3",
+                "\n\tSaf Güç","Rakibe atılarak fiziksel bir darbe indirirsin.\n\tMin Damage:120\tTur:4",
+                "\n\tKafa Kıran","Rakibin kafasına ağır bir darbe indirirsin.\n\tMin Damage:200\tTur:6"
             },
 
-        {"\tÖlümün Çevikliği: Rakibin saldırılarından %30 oranla kaçıp Kritik Karşı Saldırıda bulunursun.",
-                    "\tHançer Fırlat: Rakibe bir hançer fırlatırsın.\n\tMin Damage:50\tTur:3",
-                    "\tZayıf Nokta: Rakibin zayıf bir noktasına vurarak 1 tur boyunca saldıramaz hale getirirsin.\n\tMin Damage:80\tEtki:Stun\tTur:5",
-                    "\tGölgenin Hançeri: Rakibe tılsımlı hançerinle saldırarak ağır yara açarsın ve biraz can çalarsın.\n\tMin Damage:50 Min İyileştirme:60" +
+        {"\n\tÖlümün Çevikliği","Rakibin saldırılarından %30 oranla kaçıp Kritik Karşı Saldırıda bulunursun.",
+                    "\n\tHançer Fırlat"," Rakibe bir hançer fırlatırsın.\n\tMin Damage:50\tTur:3",
+                    "\n\tZayıf Nokta"," Rakibin zayıf bir noktasına vurarak 1 tur boyunca saldıramaz hale getirirsin.\n\tMin Damage:80\tEtki:Stun\tTur:5",
+                    "\n\tGölgenin Hançeri"," Rakibe tılsımlı hançerinle saldırarak ağır yara açarsın ve biraz can çalarsın.\n\tMin Damage:50 Min İyileştirme:60" +
                             "\tEtki:Ağır Yara\tTur:4"
             },
 
-        {"\tBilgeliğin Gücü: Rakip yeteneklerinden daha az hasar alırsın ve aldığın hasarın %20'si kadar sonraki yeteneğin için Yetenek Gücü kazanırsın",
-                "\tİyileştirme: Kendi canını bir miktar doldurursun.",
-                "\tAteş Topu: Rakibe bir ateş topu gönderirsin.",
-                "\tBilgenin Öfkesi: Rakibin yaşam gücünü emersin."}
+        {"\n\tBilgeliğin Gücü"," Rakip yeteneklerinden daha az hasar alırsın.Ayrıca aldığın hasarın %20'si kadar sonraki yeteneğin için Yetenek Gücü kazanırsın",
+                "\n\tİyileştirme"," Kendi canını bir miktar doldurursun.",
+                "\n\tAteş Topu"," Rakibe bir ateş topu gönderirsin.",
+                "\n\tBilgenin Öfkesi"," Rakibin yaşam gücünü emersin."}
     };
 
 // çok karışık burası
