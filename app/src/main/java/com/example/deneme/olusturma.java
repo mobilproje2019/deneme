@@ -62,6 +62,7 @@ public class olusturma extends AppCompatActivity {
                     //region Admin Mod
                     karakter.isim = isim.getText().toString();
                     karakter.sinif = r_sinif.getCheckedRadioButtonId();
+                    karakter.pasif=2;
                     yapilar.yapi[1][3]=0;
                     yapilar.yapi[2][3]=0;
                     unlocks.kk=0;
