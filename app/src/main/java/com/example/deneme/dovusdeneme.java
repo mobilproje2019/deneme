@@ -36,6 +36,7 @@ public class dovusdeneme extends AppCompatActivity {
     int tur=1;
     int dusmansayisi=0;
     int [][] dusman;
+    Boolean bitir=false;
     ArrayList<String> log;
 
 //region Düşman vuruş
@@ -51,7 +52,7 @@ public class dovusdeneme extends AppCompatActivity {
             if(hp<=0)
             {
                 hp=0;
-
+                kaybetme();
             }
             goster();
         }
@@ -124,6 +125,7 @@ public void goster()
             public void onClick(View view) {
                 Random rnd = new Random();
                 int hit = rnd.nextInt(karakter.stat[0] + 20) + 1 + karakter.stat[0] * 3;
+
                 dusman[dusmansayisi][0] -= hit;
                 log.add("Düşmana" + String.valueOf(hit) + " kadar hasar verdiniz");
                 dusmanvurus();
@@ -158,6 +160,8 @@ public void goster()
     {
         Toast.makeText(dovusdeneme.this,"Madendeki Goblinleri Yenerek Madeni Güvenli Bir Hale Getirdin ve Esirleri Kurtardın. İçlerinden Biri Demirci olduğunu söylüyor",Toast.LENGTH_SHORT).show();
         unlocks.q1=0;
+        Intent intent=new Intent(this,anaekran.class);
+        startActivity(intent);
     }
 //endregion
 
