@@ -16,26 +16,45 @@ public class karakter {
 
     public static int[][] skills={};
 
+    public static int[][] resimler={
+            {R.drawable.warriorpasif,R.drawable.warriors1,R.drawable.warriors2,R.drawable.warriors3,},
+            {R.drawable.assassinpasif,R.drawable.assassins1,R.drawable.assassins2,R.drawable.assassins3},
+            {R.drawable.magepasif,R.drawable.mages1,R.drawable.mages2,R.drawable.mages3}
+    };
+    public  static String[][] aciklama={
+        {"\tSavaşçının Azmi: Eğer canın %15'in altına düşerse eksik canınızın %20 i kadar Saldırı Gücü kazanırsın.",
+                "\tAğır Darbe: Rakibe ağır bir darbe indirerek 1 tur boyunca sana saldıramaz hale getirirsin.\n\tMin Damage:100\tEtki:Stun\tTur:3",
+                "\tSaf Güç: Rakibe atılarak fiziksel bir darbe indirirsin.\n\tMin Damage:120\tTur:4",
+                "\tKafa Kıran: Rakibin kafasına ağır bir darbe indirirsin.\n\tMin Damage:200\tTur:6"
+            },
+
+        {"\tÖlümün Çevikliği: Rakibin saldırılarından %30 oranla kaçıp Kritik Karşı Saldırıda bulunursun.",
+                    "\tHançer Fırlat: Rakibe bir hançer fırlatırsın.\n\tMin Damage:50\tTur:3",
+                    "\tZayıf Nokta: Rakibin zayıf bir noktasına vurarak 1 tur boyunca saldıramaz hale getirirsin.\n\tMin Damage:80\tEtki:Stun\tTur:5",
+                    "\tGölgenin Hançeri: Rakibe tılsımlı hançerinle saldırarak ağır yara açarsın ve biraz can çalarsın.\n\tMin Damage:50 Min İyileştirme:60" +
+                            "\tEtki:Ağır Yara\tTur:4"
+            },
+
+        {"\tBilgeliğin Gücü: Rakip yeteneklerinden daha az hasar alırsın ve aldığın hasarın %20'si kadar sonraki yeteneğin için Yetenek Gücü kazanırsın",
+                "\tİyileştirme: Kendi canını bir miktar doldurursun.",
+                "\tAteş Topu: Rakibe bir ateş topu gönderirsin.",
+                "\tBilgenin Öfkesi: Rakibin yaşam gücünü emersin."}
+    };
+
 // çok karışık burası
     public static int[][] assassin={
             {0,50,0,0,3},               //seviye  , Hasar , İyileştirme , Etki , TUR
-            {2,80,0,0,5},
+            {2,80,0,1,5},
             {4,50,60,2,4},
-            {8,80,25,1,6},
-            {12,100,65,0,10}
     };
     public static int[][] warrior={
             {0,100,0,1,3},               //seviye , Hasar , İyileştirme , Etki, TUR
             {2,120,0,0,4},
             {4,200,0,0,6},
-            {8,250,0,1,8},
-            {12,400,0,0,10}
     };
     public static int[][] mage={
             {0,0,50,0,2},               //seviye  , Hasar , İyileştirme , Etki , TUR
             {2,80,0,0,3},
-            {4,0,100,2,6},
-            {8,250,0,0,7},
-            {12,600,0,0,8}
+            {4,0,100,1,6},
     };
 }

@@ -74,8 +74,6 @@ public void goster()
     dhp.setText("Düşman:"+dusman[dusmansayisi][0]);
     adapter.notifyDataSetChanged();
 
-
-
 }
 //endregion
 
@@ -144,7 +142,8 @@ public void goster()
         yetenek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                Intent ytnk=new Intent(dovusdeneme.this,yetenek.class);
+                startActivity(ytnk);
             }
         });
         //endregion
