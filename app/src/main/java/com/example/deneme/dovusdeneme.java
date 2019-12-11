@@ -155,7 +155,7 @@ public void goster()
 
 
 
-    //region KAzanma
+    //region Kazanma
     public  void kazandın()
     {
         Toast.makeText(dovusdeneme.this,"Madendeki Goblinleri Yenerek Madeni Güvenli Bir Hale Getirdin ve Esirleri Kurtardın. İçlerinden Biri Demirci olduğunu söylüyor",Toast.LENGTH_SHORT).show();

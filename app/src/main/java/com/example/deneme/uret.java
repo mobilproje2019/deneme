@@ -1,21 +1,14 @@
 package com.example.deneme;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.solver.widgets.WidgetContainer;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.sql.Array;
 
 public class uret extends AppCompatActivity {
 
@@ -205,8 +198,8 @@ public class uret extends AppCompatActivity {
                         g_yaz(g_odun,odun);
                         g_yaz(g_tas,tas);
 
-                        kaynaklar.mtas+=60;
-                        kaynaklar.modun+=100+(20*yapilar.yapi[1][4]);
+                        kaynaklar.maxtas +=60;
+                        kaynaklar.maxodun +=100+(20*yapilar.yapi[1][4]);
 
                         yapilar.yapi[1][0]*=1.5*yapilar.yapi[1][4]/2;
                         yapilar.yapi[1][1]+=50;

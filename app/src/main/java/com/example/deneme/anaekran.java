@@ -2,21 +2,10 @@ package com.example.deneme;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Layout;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -26,7 +15,6 @@ import android.widget.Button;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
-import android.view.ViewGroup;
 
 
 public class anaekran extends AppCompatActivity {
@@ -49,10 +37,10 @@ public class anaekran extends AppCompatActivity {
     public static ConstraintLayout nesne;
 
     int tas = kaynaklar.tas;
-    int mtas = kaynaklar.mtas;
+    int maxtas = kaynaklar.maxtas;
     int isci = kaynaklar.isci;
     int odun = kaynaklar.odun;
-    int modun = kaynaklar.modun;
+    int maxodun = kaynaklar.maxodun;
     int gun = kaynaklar.gun;
     int g_zaman = kaynaklar.g_zaman;
 
@@ -68,9 +56,9 @@ public class anaekran extends AppCompatActivity {
                 @Override
                 public void run() {
                     odun += isci;
-                    if (odun > modun)
-                        odun = modun;
-                    g_yaz(g_odun, odun, modun);
+                    if (odun > maxodun)
+                        odun = maxodun;
+                    g_yaz(g_odun, odun, maxodun);
                 }
             });
         }
@@ -84,31 +72,8 @@ public class anaekran extends AppCompatActivity {
             g.setText(String.valueOf(sayi));
     }
 //endregion
-    //region Zaman ekleme gösterme fonksiyonu
-    public void g_zaman(int s, char m) {
-        if (m == 'a')
-            g_zaman += s;
-        else
-            g_zaman = s;
-        zaman.setProgress(g_zaman);
-        if (g_zaman < 5)
-            zaman.getProgressDrawable().setColorFilter(Color.parseColor("#ffec1e"), PorterDuff.Mode.SRC_IN);
-        else if (g_zaman > 4 && g_zaman < 11)
-            zaman.getProgressDrawable().setColorFilter(Color.parseColor("#fdc573"), PorterDuff.Mode.SRC_IN);
-        else if (g_zaman > 10 && g_zaman < 14)
-            zaman.getProgressDrawable().setColorFilter(Color.parseColor("#9b765c"), PorterDuff.Mode.SRC_IN);
-        else
-            zaman.getProgressDrawable().setColorFilter(Color.parseColor("#42423e"), PorterDuff.Mode.SRC_IN);
-        if (g_zaman > 15) {
-            g_zaman = 1;
-            gun++;
-            g_yaz(g_gun, gun, 0);
-            zaman.setProgress(g_zaman);
-            g_zaman(0, 'a');
-        }
-    }
 
-    //endregion
+
     //region Checkunlocks
     void checkunlocks() {
         if (unlocks.atolye == 1)
@@ -139,14 +104,14 @@ public class anaekran extends AppCompatActivity {
                 nesne.setBackgroundResource(R.drawable.m3);
         }
         tas = kaynaklar.tas;
-        mtas = kaynaklar.mtas;
+        maxtas = kaynaklar.maxtas;
         isci = kaynaklar.isci;
         odun = kaynaklar.odun;
-        modun = kaynaklar.modun;
+        maxodun = kaynaklar.maxodun;
         gun = kaynaklar.gun;
         g_zaman = kaynaklar.g_zaman;
-        g_yaz(g_odun, odun, modun);
-        g_yaz(g_tas, tas, mtas);
+        g_yaz(g_odun, odun, maxodun);
+        g_yaz(g_tas, tas, maxtas);
         g_yaz(g_gun, gun, 0);
     }
 
@@ -163,15 +128,12 @@ public class anaekran extends AppCompatActivity {
         b_maden = findViewById(R.id.b_maden);
         cheat = findViewById(R.id.cheat);
         b_uret = findViewById(R.id.b_uret);
-        b_uyu = findViewById(R.id.b_uyu);
-        b_bekle = findViewById(R.id.b_bekle);
         b_atolye = findViewById(R.id.b_atolye);
         g_odun = findViewById(R.id.g_odun);
         g_isci = findViewById(R.id.g_isci);
         g_tas = findViewById(R.id.g_tas);
         g_gun = findViewById(R.id.g_gun);
 
-        zaman = findViewById(R.id.progressBar);
 
         nesne=findViewById(R.id.back);
 //endregion
@@ -179,10 +141,10 @@ public class anaekran extends AppCompatActivity {
         cheat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                odun = kaynaklar.modun;
-                tas = kaynaklar.mtas;
-                g_yaz(g_odun, odun, modun);
-                g_yaz(g_tas, tas, mtas);
+                odun = kaynaklar.maxodun;
+                tas = kaynaklar.maxtas;
+                g_yaz(g_odun, odun, maxodun);
+                g_yaz(g_tas, tas, maxtas);
             }
         });
 
@@ -196,8 +158,8 @@ public class anaekran extends AppCompatActivity {
         //endregion
 
 //region Başlangıç Yazdrımı
-        g_yaz(g_odun, odun, modun);
-        g_yaz(g_tas, tas, mtas);
+        g_yaz(g_odun, odun, maxodun);
+        g_yaz(g_tas, tas, maxtas);
         g_yaz(g_gun, gun, 0);
 //endregion
 
@@ -218,13 +180,12 @@ public class anaekran extends AppCompatActivity {
                     Random rand = new Random();
                     tas += rand.nextInt(2) + 1;
                     odun += rand.nextInt(1) + 1;
-                    if (odun > modun)
-                        odun = modun;
-                    if (tas > mtas)
-                        tas = mtas;
-                    g_zaman(1, 'a');
-                    g_yaz(g_odun, odun, modun);
-                    g_yaz(g_tas, tas, mtas);
+                    if (odun > maxodun)
+                        odun = maxodun;
+                    if (tas > maxtas)
+                        tas = maxtas;
+                    g_yaz(g_odun, odun, maxodun);
+                    g_yaz(g_tas, tas, maxtas);
                 } else {
                     Toast.makeText(anaekran.this, "Daha Fazla Çalışamazsın Lütfen Uyu", Toast.LENGTH_SHORT).show();
                 }
@@ -239,10 +200,9 @@ public class anaekran extends AppCompatActivity {
                 if (g_zaman + 3 < 13) {
                     Random random = new Random();
                     odun += random.nextInt(5) + 3;
-                    if (odun > modun)
-                        odun = modun;
-                    g_zaman(3, 'a');
-                    g_yaz(g_odun, odun, modun);
+                    if (odun > maxodun)
+                        odun = maxodun;
+                    g_yaz(g_odun, odun, maxodun);
                     kaynaklar.odun=odun;
                 } else
                     Toast.makeText(anaekran.this, "Daha Fazla Çalışamazsın Lütfen Uyu", Toast.LENGTH_SHORT).show();
@@ -251,15 +211,6 @@ public class anaekran extends AppCompatActivity {
         });
 
 //endregion
-
-// region Uyu Butonu
-        b_uyu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                g_zaman(16, 'a');
-            }
-        });
-        //endregion
 
 //region Üret Menü Butonu
         b_uret.setOnClickListener(new View.OnClickListener() {
@@ -277,14 +228,6 @@ public class anaekran extends AppCompatActivity {
 
 //endregion
 
-//region Bekle butonu
-        b_bekle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                g_zaman(14, 's');
-            }
-        });
-//endregion
 
 //region Atölye Butonu
         b_atolye.setOnClickListener(new View.OnClickListener() {
@@ -295,8 +238,8 @@ public class anaekran extends AppCompatActivity {
                 kaynaklar.isci = isci;
                 kaynaklar.tas = tas;
                 kaynaklar.gun = gun;
-                g_yaz(g_odun, odun, modun);
-                g_yaz(g_tas, tas, mtas);
+                g_yaz(g_odun, odun, maxodun);
+                g_yaz(g_tas, tas, maxtas);
                 startActivity(atolye);
             }
         });
@@ -332,10 +275,9 @@ public class anaekran extends AppCompatActivity {
                        if (g_zaman + 3 < 13) {
                            Random random = new Random();
                            tas += random.nextInt(5) + 3;
-                           if (tas > mtas)
-                               tas = mtas;
-                           g_zaman(3, 'a');
-                           g_yaz(g_tas, tas, mtas);
+                           if (tas > maxtas)
+                               tas = maxtas;
+                           g_yaz(g_tas, tas, maxtas);
                            kaynaklar.tas=tas;
                        }
                        else

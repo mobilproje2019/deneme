@@ -6,8 +6,8 @@ public class kaynaklar {
     public static int isci=0;
     public static int odun=0;
     public static int gun=0;
-    public static int modun=60;
-    public static int mtas=30;
+    public static int maxodun =60;
+    public static int maxtas =30;
     public static int g_zaman=1;
 
     public static int dtas=0;

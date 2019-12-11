@@ -71,8 +71,8 @@ public class olusturma extends AppCompatActivity {
                     unlocks.balta=0;
                     unlocks.kilic=0;
                     unlocks.maden=0;
-                    kaynaklar.mtas=9999;
-                    kaynaklar.modun=9999;
+                    kaynaklar.maxtas =9999;
+                    kaynaklar.maxodun =9999;
                     kaynaklar.dtas=9999;
                     kaynaklar.cubuk=9999;
                     kaynaklar.tahta=9999;
