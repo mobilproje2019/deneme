@@ -56,6 +56,6 @@ public class karakter {
     public static int[][] mage={
             {0,0,50,0,2},               //seviye  , Hasar , İyileştirme , Etki , TUR
             {2,80,0,0,3},
-            {4,0,100,1,6},
+            {4,100,100,0,6},
     };
 }

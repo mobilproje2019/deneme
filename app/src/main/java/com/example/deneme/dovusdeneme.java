@@ -43,15 +43,36 @@ public class dovusdeneme extends AppCompatActivity {
     public void dusmanvurus() {
         for (int i = 0; i < dusmans; i++) {
             Random rnd = new Random();
-
-            int hasar = rnd.nextInt(10 + d_seviye * 2) + 1 + d_seviye * 3;
-
-            log.add("Düşman "+String.valueOf(hasar)+" kadar hasar verdi.");
-            hp -=hasar;
-            if(hp<=0)
+            Random rnd2=new Random();
+            int ihtimal=rnd2.nextInt(10)+1;
+            if(ihtimal<4 && karakter.pasif==1)
             {
-                hp=0;
-                kaybetme();
+                log.add("Saldırıdan Kurtuldun");
+            }
+            else {
+                if (etki == 1) {
+                    log.add("Düşman Son Saldırının Etkisinden Çıkamamış.");
+                    etki=0;
+                }
+                else
+                {
+                    int hasar = rnd.nextInt(10 + d_seviye * 2) + 1 + d_seviye * 3;
+                    log.add("Düşman " + String.valueOf(hasar) + " kadar hasar verdi.");
+                    hp -= hasar;
+                    if (hp <= 0) {
+                        hp = 0;
+                        kaybetme();
+                    }
+                }
+            }
+            if(etki==2)
+            {
+                log.add("Düşmanın yarası kanıyor.");
+                dusman[dusmansayisi][0] -=8+karakter.stat[1]/2;
+                if( dusman[dusmansayisi][0]>1)
+                {
+                    dusman[dusmansayisi][0]=0;
+                }
             }
             goster();
         }
@@ -72,6 +93,10 @@ public void goster()
     g_tur.setText("Tur:"+tur);
     dhp.setText("Düşman:"+dusman[dusmansayisi][0]);
     adapter.notifyDataSetChanged();
+    if( dusman[dusmansayisi][0]<1)
+    {
+        kazandın();
+    }
 
 }
 //endregion
@@ -124,12 +149,18 @@ public void goster()
         atak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int hit = 0;
                 Random rnd = new Random();
-                int hit = rnd.nextInt(karakter.stat[0] + 20) + 1 + karakter.stat[0] * 3;
-
+                if (karakter.pasif == 0){
+                    if (karakter.hp / 100 * 15 > hp) {
+                        hit = rnd.nextInt(karakter.stat[0] + 20) + 1 + karakter.stat[0] * 3 + (karakter.hp - hp) / 5;
+                    }
+            }
+               else {
+                   hit = rnd.nextInt(karakter.stat[0] + 20) + 1 + karakter.stat[0] * 3;
+                }
                 dusman[dusmansayisi][0] -= hit;
                 log.add("Düşmana" + String.valueOf(hit) + " kadar hasar verdiniz");
-                dusmanvurus();
                 if (dusman[dusmansayisi][0] < 1) {
                     if (dusmansayisi != dusmans - 1)
                         dusmansayisi++;
@@ -137,6 +168,7 @@ public void goster()
                         kazandın();
                 }
                 goster();
+                dusmanvurus();
             }
         });
         //endregion
@@ -154,14 +186,6 @@ public void goster()
 
 
     }
-
-public void yetenek(int[] skill)
-{
-    dusman[dusmansayisi][0]-=skill[1];
-    hp+=skill[2];
-    etki=skill[3];
-}
-
 
     //region Kazanma
     public  void kazandın()
@@ -188,24 +212,76 @@ public void yetenek(int[] skill)
         super.onResume();
         if(kaynaklar.getYetenek()!=null)
         {skill=kaynaklar.getYetenek();
-
-            if(skill[0]==0)
-            {
-                log.add("Heal");
+        //MAGE
+        if(karakter.pasif==2) {
+            if (skill[0] == 0) {
+                log.add("İyileştirme Gücünü Kullandın.");
+                hp+=50+(karakter.seviye*2+karakter.stat[2]);
+                goster();
+                dusmanvurus();
+            }
+            else if (skill[0] == 2) {
+                log.add("Ateş Topu Gücünü Kullanarak Rakibi Yaktın.");
+                dusman[dusmansayisi][0]-=80+(karakter.seviye*2+karakter.stat[2]);
+                goster();
+                dusmanvurus();
+            }
+            else if (skill[0] == 4) {
+                log.add("Bilgenin Öfkesi ile rakibinin yaşam enerjisini kendine çektin.");
+                dusman[dusmansayisi][0]-=100+(karakter.seviye*2+karakter.stat[2]);
+                hp+=100+(karakter.seviye*2+karakter.stat[2]);
+                goster();
+                dusmanvurus();
+            }
+        }
+        //ASSASSIN
+        else if(karakter.pasif==1)
+        {
+            if (skill[0] == 0) {
+                log.add("Rakibe Bir Hançer Fırlattın.");
+                dusman[dusmansayisi][0]-=50+(karakter.seviye*2+karakter.stat[1]);
+                dusmanvurus();
                 goster();
             }
-            if(skill[0]==2)
-            {
-                log.add("Ateş Topu");
+            else if (skill[0] == 2) {
+                log.add("Rakibin Zayıf noktasına vurarak 1 tur boyunca sana saldıramaz hale getirdin.");
+                dusman[dusmansayisi][0]-=80+(karakter.seviye*2+karakter.stat[1]);
+                etki=1;
+                goster();
+                dusmanvurus();
+            }
+            else if (skill[0] == 4) {
+                log.add("Gölgenin Hançerini Düşmana Saplayarak Ağır Yaraya sebep oldun.");
+                dusman[dusmansayisi][0]-=50+(karakter.seviye*2+karakter.stat[1]);
+                hp+=60+(karakter.seviye*2+karakter.stat[2]);
+                etki=2;
+                goster();
+                dusmanvurus();
+            }
+        }
+        //Warrior
+            else
+        {
+            if (skill[0] == 0) {
+                log.add("Ağır Darbe Yeteneğiyle Düşmanı 1 Tur Etkisiz Kıldın.");
+                dusman[dusmansayisi][0]-=100+(karakter.seviye*2+karakter.stat[0]);
+                etki=1;
+                dusmanvurus();
                 goster();
             }
-            if(skill[0]==4)
-            {
-                log.add("EMME");
+            else if (skill[0] == 2) {
+                log.add("Saf Gücünle Düşmana Atıldın.");
+                dusman[dusmansayisi][0]-=120+(karakter.seviye*2+karakter.stat[0]);
                 goster();
+                dusmanvurus();
             }
-
-
+            else if (skill[0] == 4) {
+                log.add("Kafa Kıran Darbesiyle Düşmana Ağır Hasar Verdin.");
+                dusman[dusmansayisi][0]-=200+(karakter.seviye*2+karakter.stat[0]);
+                goster();
+                dusmanvurus();
+            }
+        }
         }
 
     }
