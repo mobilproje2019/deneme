@@ -13,4 +13,14 @@ public class kaynaklar {
     public static int dtas=0;
     public static int tahta=0;
     public static int cubuk=0;
+
+    public static int[] getYetenek() {
+        return yetenek;
+    }
+
+    public static void setYetenek(int[] yetenek) {
+        kaynaklar.yetenek = yetenek;
+    }
+
+    public static int[] yetenek;
 }

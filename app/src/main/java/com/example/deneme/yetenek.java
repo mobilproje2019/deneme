@@ -118,9 +118,9 @@ public class yetenek extends AppCompatActivity {
                 yetenek[i] = karakter.skills[0][i];
             }
 
-            Intent skill = new Intent(yetenek.this, dovusdeneme.class);
-            skill.putExtra("yetenek", yetenek);
-            startActivity(skill);
+
+            kaynaklar.setYetenek(yetenek);
+            finish();
         }
     }
     public void skill2()

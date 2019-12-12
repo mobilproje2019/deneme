@@ -183,4 +183,30 @@ public void yetenek(int[] skill)
     }
     //endregion
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(kaynaklar.getYetenek()!=null)
+        {skill=kaynaklar.getYetenek();
+
+            if(skill[0]==0)
+            {
+                log.add("Heal");
+                goster();
+            }
+            if(skill[0]==2)
+            {
+                log.add("Ateş Topu");
+                goster();
+            }
+            if(skill[0]==4)
+            {
+                log.add("EMME");
+                goster();
+            }
+
+
+        }
+
+    }
 }
