@@ -33,19 +33,19 @@ public class yetenek extends AppCompatActivity {
         g_skill3=findViewById(R.id.g_skill3);
         g_skill3ac=findViewById(R.id.g_skill3ac);
 
-        pasif.setImageResource(karakter.resimler[karakter.pasif][1]);
+        pasif.setImageResource(karakter.resimler[karakter.pasif][0]);
         skill1.setImageResource(karakter.resimler[karakter.pasif][1]);
-        skill2.setImageResource(karakter.resimler[karakter.pasif][1]);
-        skill3.setImageResource(karakter.resimler[karakter.pasif][1]);
+        skill2.setImageResource(karakter.resimler[karakter.pasif][2]);
+        skill3.setImageResource(karakter.resimler[karakter.pasif][3]);
 
-        g_pasif.setText(karakter.aciklama[karakter.pasif][0]);
-        pasifac.setText(karakter.aciklama[karakter.pasif][1]);
-        g_skill1.setText(karakter.aciklama[karakter.pasif][2]);
-        g_skill1ac.setText(karakter.aciklama[karakter.pasif][3]);
-        g_skill2.setText(karakter.aciklama[karakter.pasif][4]);
-        g_skill2ac.setText(karakter.aciklama[karakter.pasif][5]);
-        g_skill3.setText(karakter.aciklama[karakter.pasif][6]);
-        g_skill3ac.setText(karakter.aciklama[karakter.pasif][7]);
+       g_pasif.setText(karakter.aciklama[karakter.pasif][0]);
+       pasifac.setText(karakter.aciklama[karakter.pasif][1]);
+       g_skill1.setText(karakter.aciklama[karakter.pasif][2]);
+       g_skill1ac.setText(karakter.aciklama[karakter.pasif][3]);
+       g_skill2.setText(karakter.aciklama[karakter.pasif][4]);
+       g_skill2ac.setText(karakter.aciklama[karakter.pasif][5]);
+       g_skill3.setText(karakter.aciklama[karakter.pasif][6]);
+      g_skill3ac.setText(karakter.aciklama[karakter.pasif][7]);
 
 
     }
