@@ -28,6 +28,7 @@ public class dovusdeneme extends AppCompatActivity {
     Button atak,yetenek;
 
     int d_seviye=1;
+    int etki=0;
     int hp=karakter.hp;
     int dusmans= 1;
     int tur=1;
@@ -118,7 +119,6 @@ public void goster()
         Bundle intent=getIntent().getExtras();
         if(intent!=null) {
             skill = intent.getIntArray("yetenek");
-
         }
 //region Attack
         atak.setOnClickListener(new View.OnClickListener() {
@@ -157,7 +157,9 @@ public void goster()
 
 public void yetenek(int[] skill)
 {
-
+    dusman[dusmansayisi][0]-=skill[1];
+    hp+=skill[2];
+    etki=skill[3];
 }
 
 
