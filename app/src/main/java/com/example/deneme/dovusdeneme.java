@@ -21,9 +21,6 @@ import java.util.Random;
 
 public class dovusdeneme extends AppCompatActivity {
 
-    LinearLayout layout;
-    ScrollView scrollView;
-
     TextView isim,g_tur,dhp;
     ProgressBar g_hp;
     ListView list;
@@ -34,6 +31,7 @@ public class dovusdeneme extends AppCompatActivity {
     int hp=karakter.hp;
     int dusmans= 1;
     int tur=1;
+    int[] skill;
     int dusmansayisi=0;
     int [][] dusman;
     Boolean bitir=false;
@@ -117,6 +115,11 @@ public void goster()
 
         goster();
 
+        Bundle intent=getIntent().getExtras();
+        if(intent!=null) {
+            skill = intent.getIntArray("yetenek");
+
+        }
 //region Attack
         atak.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,6 +146,7 @@ public void goster()
             @Override
             public void onClick(View v) {
                 Intent ytnk=new Intent(dovusdeneme.this,yetenek.class);
+                ytnk.putExtra("tur",tur);
                 startActivity(ytnk);
             }
         });
@@ -151,7 +155,10 @@ public void goster()
 
     }
 
+public void yetenek(int[] skill)
+{
 
+}
 
 
     //region Kazanma
