@@ -247,16 +247,17 @@ public void goster()
                 log.add("Rakibin Zayıf noktasına vurarak 1 tur boyunca sana saldıramaz hale getirdin.");
                 dusman[dusmansayisi][0]-=80+(karakter.seviye*2+karakter.stat[1]);
                 etki=1;
-                goster();
                 dusmanvurus();
+                goster();
             }
             else if (skill[0] == 4) {
                 log.add("Gölgenin Hançerini Düşmana Saplayarak Ağır Yaraya sebep oldun.");
                 dusman[dusmansayisi][0]-=50+(karakter.seviye*2+karakter.stat[1]);
                 hp+=60+(karakter.seviye*2+karakter.stat[2]);
                 etki=2;
-                goster();
+
                 dusmanvurus();
+                goster();
             }
         }
         //Warrior
@@ -272,16 +273,18 @@ public void goster()
             else if (skill[0] == 2) {
                 log.add("Saf Gücünle Düşmana Atıldın.");
                 dusman[dusmansayisi][0]-=120+(karakter.seviye*2+karakter.stat[0]);
-                goster();
                 dusmanvurus();
+                goster();
             }
             else if (skill[0] == 4) {
                 log.add("Kafa Kıran Darbesiyle Düşmana Ağır Hasar Verdin.");
                 dusman[dusmansayisi][0]-=200+(karakter.seviye*2+karakter.stat[0]);
-                goster();
                 dusmanvurus();
+                goster();
             }
+
         }
+
         }
 
     }
