@@ -22,7 +22,9 @@ public class yetenek extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yetenek);
-
+        Yetenekler yetenekler = new Yetenekler();
+        yetenekler.initcharacter(karakter.pasif);
+    //region ID Tanımlamaları
         pasif=findViewById(R.id.pasif);
         skill1=findViewById(R.id.skill1);
         skill1=findViewById(R.id.skill1);
@@ -43,16 +45,16 @@ public class yetenek extends AppCompatActivity {
         skill2.setImageResource(karakter.resimler[karakter.pasif][2]);
         skill3.setImageResource(karakter.resimler[karakter.pasif][3]);
 
-       g_pasif.setText(karakter.aciklama[karakter.pasif][0]);
-       pasifac.setText(karakter.aciklama[karakter.pasif][1]);
-       g_skill1.setText(karakter.aciklama[karakter.pasif][2]);
-       g_skill1ac.setText(karakter.aciklama[karakter.pasif][3]);
-       g_skill2.setText(karakter.aciklama[karakter.pasif][4]);
-       g_skill2ac.setText(karakter.aciklama[karakter.pasif][5]);
-       g_skill3.setText(karakter.aciklama[karakter.pasif][6]);
-       g_skill3ac.setText(karakter.aciklama[karakter.pasif][7]);
+       g_pasif.setText(yetenekler.getPassiveName());
+       pasifac.setText(yetenekler.getPassive());
+       g_skill1.setText(yetenekler.getSkill_1Name());
+       g_skill1ac.setText(yetenekler.getSkill_1());
+       g_skill2.setText(yetenekler.getSkill_2Name());
+       g_skill2ac.setText(yetenekler.getSkill_2());
+       g_skill3.setText(yetenekler.getSkill_3Name());
+       g_skill3ac.setText(yetenekler.getSkill_3());
 
-
+//endregion
        Bundle intent=getIntent().getExtras();
        if(intent!=null)
        tur=intent.getInt("tur");
