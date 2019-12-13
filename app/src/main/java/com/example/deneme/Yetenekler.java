@@ -61,36 +61,36 @@ public class Yetenekler {
     {
         if(pasif==0)
         {
-            setPassiveName(karakter.aciklama[0][0].toString());
-            setPassive(karakter.aciklama[0][1].toString());
-            setSkill_1Name(karakter.aciklama[0][2].toString());
-            setSkill_1(karakter.aciklama[0][3].toString());
-            setSkill_2Name(karakter.aciklama[0][4].toString());
-            setSkill_2(karakter.aciklama[0][5].toString());
-            setSkill_3Name(karakter.aciklama[0][6].toString());
-            setSkill_3(karakter.aciklama[0][7].toString());
+            setPassiveName(karakter.aciklama[0][0]);
+            setPassive(karakter.aciklama[0][1]);
+            setSkill_1Name(karakter.aciklama[0][2]);
+            setSkill_1(karakter.aciklama[0][3]);
+            setSkill_2Name(karakter.aciklama[0][4]);
+            setSkill_2(karakter.aciklama[0][5]);
+            setSkill_3Name(karakter.aciklama[0][6]);
+            setSkill_3(karakter.aciklama[0][7]);
         }
         else if(pasif==1)
         {
-            setPassiveName(karakter.aciklama[1][0].toString());
-            setPassive(karakter.aciklama[1][1].toString());
-            setSkill_1Name(karakter.aciklama[1][2].toString());
-            setSkill_1(karakter.aciklama[1][3].toString());
-            setSkill_2Name(karakter.aciklama[1][4].toString());
-            setSkill_2(karakter.aciklama[1][5].toString());
-            setSkill_3Name(karakter.aciklama[1][6].toString());
-            setSkill_3(karakter.aciklama[1][7].toString());
+            setPassiveName(karakter.aciklama[1][0]);
+            setPassive(karakter.aciklama[1][1]);
+            setSkill_1Name(karakter.aciklama[1][2]);
+            setSkill_1(karakter.aciklama[1][3]);
+            setSkill_2Name(karakter.aciklama[1][4]);
+            setSkill_2(karakter.aciklama[1][5]);
+            setSkill_3Name(karakter.aciklama[1][6]);
+            setSkill_3(karakter.aciklama[1][7]);
         }
         else
         {
-            setPassiveName(karakter.aciklama[2][0].toString());
-            setPassive(karakter.aciklama[2][1].toString());
-            setSkill_1Name(karakter.aciklama[2][2].toString());
-            setSkill_1(karakter.aciklama[2][3].toString());
-            setSkill_2Name(karakter.aciklama[2][4].toString());
-            setSkill_2(karakter.aciklama[2][5].toString());
-            setSkill_3Name(karakter.aciklama[2][6].toString());
-            setSkill_3(karakter.aciklama[2][7].toString());
+            setPassiveName(karakter.aciklama[2][0]);
+            setPassive(karakter.aciklama[2][1]);
+            setSkill_1Name(karakter.aciklama[2][2]);
+            setSkill_1(karakter.aciklama[2][3]);
+            setSkill_2Name(karakter.aciklama[2][4]);
+            setSkill_2(karakter.aciklama[2][5]);
+            setSkill_3Name(karakter.aciklama[2][6]);
+            setSkill_3(karakter.aciklama[2][7]);
         }
     }
 
