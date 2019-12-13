@@ -210,8 +210,8 @@ public void goster()
     @Override
     protected void onResume() {
         super.onResume();
-        if(kaynaklar.getYetenek()!=null)
-        {skill=kaynaklar.getYetenek();
+        if(kaynaklar.getYetenek(skill)!=null)
+        {skill=kaynaklar.getYetenek(skill);
         //MAGE
         if(karakter.pasif==2) {
             if (skill[0] == 0) {
