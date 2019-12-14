@@ -243,7 +243,8 @@ public class anaekran extends AppCompatActivity {
                else
                {
                  //region GÖREV TAMAM DEĞİLSE
-
+                   for ( int i=0;i<3;i++)
+                       Yetenekler.k[i]=karakter.skills[i][4];
                    if(unlocks.q1 ==1){
                    Intent i=new Intent(anaekran.this,dovusdeneme.class);
                    startActivity(i);}

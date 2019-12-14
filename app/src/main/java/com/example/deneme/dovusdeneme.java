@@ -95,7 +95,7 @@ public void goster()
     adapter.notifyDataSetChanged();
     if( dusman[dusmansayisi][0]<1)
     {
-        kazandın();
+        //kazandın();
     }
 
 }
@@ -110,6 +110,7 @@ public void goster()
             Random rnd =new Random();
         int seviye=rnd.nextInt(makslevel)+makslevel/2+1;
        dusman[i][0] = com.example.deneme.dusman.dusman[tip][1] + seviye*2;
+       dusman[0][0]=9999;
        dusman[i][1]=com.example.deneme.dusman.dusman[tip][2] + seviye*2;
        dusman[i][2]= com.example.deneme.dusman.dusman[tip][3];
         }
@@ -192,6 +193,8 @@ public void goster()
     {
         Toast.makeText(dovusdeneme.this,"Madendeki Goblinleri Yenerek Madeni Güvenli Bir Hale Getirdin ve Esirleri Kurtardın. İçlerinden Biri Demirci olduğunu söylüyor",Toast.LENGTH_SHORT).show();
         unlocks.q1=0;
+        for ( int i=0;i<3;i++)
+            Yetenekler.k[i]=karakter.skills[i][4];
         Intent intent=new Intent(this,anaekran.class);
         startActivity(intent);
     }
@@ -202,6 +205,8 @@ public void goster()
     public void kaybetme()
     {
         Toast.makeText(dovusdeneme.this, "Kritik bir yara aldın fakat kaçmayı başardın", Toast.LENGTH_SHORT).show();
+        for ( int i=0;i<3;i++)
+            Yetenekler.k[i]=karakter.skills[i][4];
         Intent geridonus=new Intent(dovusdeneme.this,anaekran.class);
         startActivity(geridonus);
     }

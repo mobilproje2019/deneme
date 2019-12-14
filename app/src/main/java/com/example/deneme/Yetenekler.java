@@ -1,14 +1,21 @@
 package com.example.deneme;
-
 public class Yetenekler {
-    String passive;
-    String passiveName;
-    String Skill_1Name;
-    String Skill_2Name;
-    String Skill_3Name;
-    String Skill_1;
-    String Skill_2;
-    String Skill_3;
+    public static String passive;
+    public static String passiveName;
+    public static  int Skill_1CD;
+    public static  int Skill_2CD;
+    public static int Skill_3CD;
+    public static String Skill_1Name;
+    public static String Skill_2Name;
+    public static String Skill_3Name;
+    public static String Skill_1;
+    public static String Skill_2;
+    public static String Skill_3;
+
+    public static int[] k=new int[3];
+
+
+    //region GET SET
     public String getPassiveName() {
         return passiveName;
     }
@@ -57,6 +64,25 @@ public class Yetenekler {
     public void setSkill_3Name(String skill_3Name) {
         Skill_3Name = skill_3Name;
     }
+    public int getSkill_1CD() {
+        return Skill_1CD;
+    }
+    public void setSkill_1CD(int skill_1CD) {
+        Skill_1CD = skill_1CD;
+}
+    public int getSkill_2CD() {
+        return Skill_2CD;
+    }
+    public void setSkill_2CD(int skill_2CD) {
+        Skill_2CD = skill_2CD;
+    }
+    public int getSkill_3CD() {
+        return Skill_3CD;
+    }
+    public void setSkill_3CD(int skill_3CD) {
+        Skill_3CD = skill_3CD;
+    }
+    //endregion
     public  void initcharacter(int pasif)
     {
         if(pasif==0)
@@ -65,10 +91,13 @@ public class Yetenekler {
             setPassive(karakter.aciklama[0][1]);
             setSkill_1Name(karakter.aciklama[0][2]);
             setSkill_1(karakter.aciklama[0][3]);
+            setSkill_1CD(3);
             setSkill_2Name(karakter.aciklama[0][4]);
             setSkill_2(karakter.aciklama[0][5]);
+            setSkill_2CD(4);
             setSkill_3Name(karakter.aciklama[0][6]);
             setSkill_3(karakter.aciklama[0][7]);
+            setSkill_3CD(6);
         }
         else if(pasif==1)
         {
@@ -76,10 +105,13 @@ public class Yetenekler {
             setPassive(karakter.aciklama[1][1]);
             setSkill_1Name(karakter.aciklama[1][2]);
             setSkill_1(karakter.aciklama[1][3]);
+            setSkill_1CD(3);
             setSkill_2Name(karakter.aciklama[1][4]);
             setSkill_2(karakter.aciklama[1][5]);
+            setSkill_2CD(5);
             setSkill_3Name(karakter.aciklama[1][6]);
             setSkill_3(karakter.aciklama[1][7]);
+            setSkill_3CD(4);
         }
         else
         {
@@ -87,10 +119,13 @@ public class Yetenekler {
             setPassive(karakter.aciklama[2][1]);
             setSkill_1Name(karakter.aciklama[2][2]);
             setSkill_1(karakter.aciklama[2][3]);
+            setSkill_1CD(2);
             setSkill_2Name(karakter.aciklama[2][4]);
             setSkill_2(karakter.aciklama[2][5]);
+            setSkill_2CD(3);
             setSkill_3Name(karakter.aciklama[2][6]);
             setSkill_3(karakter.aciklama[2][7]);
+            setSkill_3CD(6);
         }
     }
 
