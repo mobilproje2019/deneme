@@ -40,7 +40,7 @@ public class anaekran extends AppCompatActivity {
     int maxodun = kaynaklar.maxodun;
     int gun = kaynaklar.gun;
     int g_zaman = kaynaklar.g_zaman;
-
+    boolean a = false;
     Timer tiktak = new Timer();
     Handler handler = new Handler();
 
@@ -136,6 +136,25 @@ public class anaekran extends AppCompatActivity {
         cheat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(!a)
+                {
+                    a=true;
+                    yapilar.yapi[1][3]=0;
+                    yapilar.yapi[2][3]=0;
+                    unlocks.kk=0;
+                    yapilar.yapi[3][3] = 0;
+                    unlocks.ev = 0;
+                    unlocks.atolye=0;
+                    unlocks.balta=0;
+                    unlocks.kilic=0;
+                    unlocks.maden=0;
+                    kaynaklar.maxtas =9999;
+                    kaynaklar.maxodun =9999;
+                    kaynaklar.dtas=9999;
+                    kaynaklar.cubuk=9999;
+                    kaynaklar.tahta=9999;
+                    checkunlocks();
+                }
                 odun = kaynaklar.maxodun;
                 tas = kaynaklar.maxtas;
                 g_yaz(g_odun, odun, maxodun);
