@@ -99,6 +99,8 @@ public class anaekran extends AppCompatActivity {
             }
             if(unlocks.ev==0)
                 nesne.setBackgroundResource(R.drawable.m3);
+            if(unlocks.demirci==0)
+                nesne.setBackgroundResource(R.drawable.m4);
         }
         tas = kaynaklar.tas;
         maxtas = kaynaklar.maxtas;
@@ -143,6 +145,7 @@ public class anaekran extends AppCompatActivity {
                     yapilar.yapi[2][3]=0;
                     unlocks.kk=0;
                     yapilar.yapi[3][3] = 0;
+                    yapilar.yapi[4][3] = 0;
                     unlocks.ev = 0;
                     unlocks.atolye=0;
                     unlocks.balta=0;

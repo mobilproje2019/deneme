@@ -2,6 +2,7 @@ package com.example.deneme;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
@@ -20,7 +21,7 @@ public class atolye extends AppCompatActivity {
 
     Handler handler = new Handler();
     Timer timer=new Timer();
-
+    Button b_geri;
     ImageButton b_balta,b_dtas,b_cubuk,b_tahta,b_kazma,b_kilic;
     TextView g_odun,g_tas,g_dtas,g_tahta,g_cubuk;
     TextView tx[];
@@ -105,6 +106,8 @@ public class atolye extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atolye);
+
+        b_geri=findViewById(R.id.b_geri);
 
         b_balta=findViewById(R.id.b_balta);
         b_dtas=findViewById(R.id.b_dtas);
@@ -243,6 +246,16 @@ public class atolye extends AppCompatActivity {
                     yenile();
                     g_all();
                 }
+            }
+        });
+        //endregion
+
+        //region Geri
+        b_geri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(atolye.this,anaekran.class);
+                startActivity(intent);
             }
         });
         //endregion

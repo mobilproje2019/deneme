@@ -19,6 +19,7 @@ public class uret extends AppCompatActivity {
     ImageButton kulube;
     ImageButton ev;
     ImageButton atolye;
+    ImageButton demirci;
     TextView g_odun;
     TextView g_isci;
     TextView g_tas;
@@ -29,6 +30,7 @@ public class uret extends AppCompatActivity {
     TextView t_kk;
     TextView t_ev;
     TextView t_atolye;
+    TextView t_demirci;
 
 
     int tas=0;
@@ -93,11 +95,13 @@ public class uret extends AppCompatActivity {
         depo=findViewById(R.id.depo);
         ev=findViewById(R.id.ev);
         atolye=findViewById(R.id.atolye);
+        demirci=findViewById(R.id.demirci);
         b_geri=findViewById(R.id.b_geri);
         t_depo=findViewById(R.id.t_depo);
         t_kk=findViewById(R.id.t_kk);
         t_ev=findViewById(R.id.t_ev);
         t_atolye=findViewById(R.id.t_atolye);
+        t_demirci=findViewById(R.id.t_demirci);
 
 
         g_odun=findViewById(R.id.g_odun);
@@ -105,8 +109,8 @@ public class uret extends AppCompatActivity {
         g_tas=findViewById(R.id.g_tas);
         g_gun=findViewById(R.id.g_gun);
 
-        b_gosterge=new ImageButton[]{kulube,depo,ev,atolye};
-        t_gosterge=new TextView[]{t_kk,t_depo,t_ev,t_atolye};
+        b_gosterge=new ImageButton[]{kulube,depo,ev,atolye,demirci};
+        t_gosterge=new TextView[]{t_kk,t_depo,t_ev,t_atolye,t_demirci};
 
 
         t_depo.setText("\nDepo\n"+String.valueOf(yapilar.yapi[1][0])+" Odun"+" "+String.valueOf(yapilar.yapi[1][1])+" Taş");
@@ -215,6 +219,19 @@ public class uret extends AppCompatActivity {
         });
 
 //endregion
+
+        //region Demirci
+        demirci.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(yap(4)) {
+                    yapilar.yapi[4][3] = 0;
+                    unlocks.demirci = 0;
+                }
+                refresh(b_gosterge,t_gosterge);
+            }
+        });
+        //endregion
 
     }
 }
