@@ -26,6 +26,7 @@ public class anaekran extends AppCompatActivity {
     Button b_atolye;
     Button cheat;
     Button b_maden;
+    Button b_sehir;
     Button fight;
     TextView g_odun;
     TextView g_isci;
@@ -90,6 +91,10 @@ public class anaekran extends AppCompatActivity {
             b_maden.setVisibility(View.INVISIBLE);
         else
             b_maden.setVisibility(View.VISIBLE);
+        if (unlocks.kopru == 1)
+            b_sehir.setVisibility(View.INVISIBLE);
+        else
+            b_sehir.setVisibility(View.VISIBLE);
 
         if (unlocks.kk == 0)
         {
@@ -125,6 +130,7 @@ public class anaekran extends AppCompatActivity {
     //region id bağdaştırımı
         fight=findViewById(R.id.btndovus);
         b_topla = findViewById(R.id.b_topla);
+        b_sehir = findViewById(R.id.sehir);
         b_odun = findViewById(R.id.b_odun);
         b_maden = findViewById(R.id.b_maden);
         cheat = findViewById(R.id.cheat);
@@ -154,6 +160,7 @@ public class anaekran extends AppCompatActivity {
                     unlocks.kilic=0;
                     unlocks.maden=0;
                     unlocks.demirci=0;
+                    unlocks.kopru=0;
                     kaynaklar.maxtas =9999;
                     kaynaklar.maxodun =9999;
                     kaynaklar.dtas=9999;
@@ -308,6 +315,17 @@ public class anaekran extends AppCompatActivity {
             }
         });
 //endregion
+
+        //region Şehir
+        b_sehir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sehir=new Intent(anaekran.this,sehir.class);
+                startActivity(sehir);
+            }
+        });
+        //endregion
+
     }
 
     public void onResume() {

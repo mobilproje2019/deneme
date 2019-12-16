@@ -31,10 +31,8 @@
         Gerekli malzemeleri toplayıp atolyeyi yeniden inşaa et.
 
         Gerekli Malzemeler:
-        Odun 250 Adet
-        Taş 150 Adet
-        Tahta 200 Adet
-        Düz Taş 100 Adet
+        Odun 45 Adet
+        Taş 155 Adet
     </string>
     <string name="demirci">
         Demirci sana yeni bir kazma yaptı bu kazma sayesinde artık demir madeni kazabilir ve demirciye bu madenleri işletebilirsin.
@@ -57,10 +55,9 @@
         Karşıa tarafa geçebilmek için köprüyü yeniden inşaa et.
 
         Gerekli Malzemeler:
-        Odun 250 Adet
-        Taş 150 Adet
-        Tahta 200 Adet
-        Düz Taş 100 Adet
+        Odun 800 Adet
+        Taş 500 Adet
+
     </string>
     <string name="Quest_4">
 

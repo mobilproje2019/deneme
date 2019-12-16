@@ -20,6 +20,7 @@ public class uret extends AppCompatActivity {
     ImageButton ev;
     ImageButton atolye;
     ImageButton demirci;
+    ImageButton kopru;
     TextView g_odun;
     TextView g_isci;
     TextView g_tas;
@@ -31,6 +32,7 @@ public class uret extends AppCompatActivity {
     TextView t_ev;
     TextView t_atolye;
     TextView t_demirci;
+    TextView t_kopru;
 
 
     int tas=0;
@@ -96,12 +98,14 @@ public class uret extends AppCompatActivity {
         ev=findViewById(R.id.ev);
         atolye=findViewById(R.id.atolye);
         demirci=findViewById(R.id.demirci);
+        kopru=findViewById(R.id.kopru);
         b_geri=findViewById(R.id.b_geri);
         t_depo=findViewById(R.id.t_depo);
         t_kk=findViewById(R.id.t_kk);
         t_ev=findViewById(R.id.t_ev);
         t_atolye=findViewById(R.id.t_atolye);
         t_demirci=findViewById(R.id.t_demirci);
+        t_kopru=findViewById(R.id.t_kopru);
 
 
         g_odun=findViewById(R.id.g_odun);
@@ -176,13 +180,11 @@ public class uret extends AppCompatActivity {
         b_geri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent anaekran=new Intent(uret.this, anaekran.class);
-
                 kaynaklar.odun=odun;
                 kaynaklar.isci=isci;
                 kaynaklar.tas=tas;
                 kaynaklar.gun=gun;
-                startActivity(anaekran);
+                finish();
             }
         });
 //endregion
@@ -229,6 +231,18 @@ public class uret extends AppCompatActivity {
                     unlocks.demirci = 0;
                 }
                 refresh(b_gosterge,t_gosterge);
+            }
+        });
+        //endregion
+
+        //region Köprü
+        kopru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(yap(5)){
+                yapilar.yapi[5][3]=0;
+                unlocks.kopru=0;
+                }
             }
         });
         //endregion

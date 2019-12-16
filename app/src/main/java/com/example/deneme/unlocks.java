@@ -10,4 +10,5 @@ public class unlocks {
     public static int kilic=1;
     public static int q1=1;
     public static int demirci=1;
+    public static int kopru=1;
 }
