@@ -26,6 +26,7 @@ public class anaekran extends AppCompatActivity {
     Button b_atolye;
     Button cheat;
     Button b_maden;
+    Button fight;
     TextView g_odun;
     TextView g_isci;
     TextView g_tas;
@@ -122,6 +123,7 @@ public class anaekran extends AppCompatActivity {
         setContentView(R.layout.activity_anaekran);
 
     //region id bağdaştırımı
+        fight=findViewById(R.id.btndovus);
         b_topla = findViewById(R.id.b_topla);
         b_odun = findViewById(R.id.b_odun);
         b_maden = findViewById(R.id.b_maden);
@@ -156,6 +158,7 @@ public class anaekran extends AppCompatActivity {
                     kaynaklar.dtas=9999;
                     kaynaklar.cubuk=9999;
                     kaynaklar.tahta=9999;
+                    fight.setVisibility(View.VISIBLE);
                     checkunlocks();
                 }
                 odun = kaynaklar.maxodun;
@@ -165,6 +168,7 @@ public class anaekran extends AppCompatActivity {
             }
         });
 //endregion
+
 //region Başlangıç Yazdırımı
         g_yaz(g_odun, odun, maxodun);
         g_yaz(g_tas, tas, maxtas);
@@ -173,7 +177,16 @@ public class anaekran extends AppCompatActivity {
 //region Timer Parametreleri ve Başlatıcısı
         tiktak.schedule(tik, 1000, 3000);
 //endregion
+//region Dovus Butonu
+            fight.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(getApplicationContext(),fight_temp.class);
+                    startActivity(i);
+                }
+            });
 
+        //endregion
 //region Topla Butonu
         b_topla.setOnClickListener(new View.OnClickListener() {
             @Override
