@@ -318,7 +318,7 @@ public class anaekran extends AppCompatActivity {
         });
 //endregion
 
-        //region Şehir
+//region Şehir
         b_sehir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
