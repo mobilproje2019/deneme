@@ -181,7 +181,7 @@ public class anaekran extends AppCompatActivity {
             fight.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i = new Intent(getApplicationContext(),fight_temp.class);
+                    Intent i = new Intent(getApplicationContext(),dovusdeneme.class);
                     startActivity(i);
                 }
             });

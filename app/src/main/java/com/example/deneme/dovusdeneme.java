@@ -22,7 +22,7 @@ import java.util.Random;
 public class dovusdeneme extends AppCompatActivity {
 
     TextView isim,g_tur,dhp;
-    ProgressBar g_hp;
+    ProgressBar g_hp,d_hp;
     ListView list;
     ArrayAdapter<String> adapter;
     Button atak,yetenek;
