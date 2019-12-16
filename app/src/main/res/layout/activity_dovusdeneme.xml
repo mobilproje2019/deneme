@@ -54,7 +54,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/khp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="HP"
@@ -87,34 +87,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/dhp"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Düşman:"
                         android:textSize="18sp" />
 
+                    <ProgressBar
+                        android:id="@+id/progressBar2"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
                 </LinearLayout>
-
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    style="?android:attr/progressBarStyleHorizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
 
             </LinearLayout>
 
@@ -161,7 +151,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="İtem" />
+
                 </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>

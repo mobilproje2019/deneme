@@ -158,6 +158,7 @@ public class anaekran extends AppCompatActivity {
                     kaynaklar.dtas=9999;
                     kaynaklar.cubuk=9999;
                     kaynaklar.tahta=9999;
+                    karakter.seviye=10;
                     fight.setVisibility(View.VISIBLE);
                     checkunlocks();
                 }

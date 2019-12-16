@@ -21,7 +21,7 @@ import java.util.Random;
 
 public class dovusdeneme extends AppCompatActivity {
 
-    TextView isim,g_tur,dhp;
+    TextView isim,g_tur,dhp,khp;
     ProgressBar g_hp,d_hp;
     ListView list;
     ArrayAdapter<String> adapter;
@@ -86,12 +86,14 @@ public void goster()
 {
     isim.setText(karakter.isim);
     g_hp.setProgress(hp);
+    d_hp.setProgress(dusman[dusmansayisi][0]);
     if(log.size()>3)
     {
         log.remove(0);
     }
     g_tur.setText("Tur:"+tur);
-    dhp.setText("Düşman:"+dusman[dusmansayisi][0]);
+    dhp.setText("Düşman: "+dusman[dusmansayisi][0]);
+    khp.setText("Canın : "+hp);
     adapter.notifyDataSetChanged();
     if( dusman[dusmansayisi][0]<1)
     {
@@ -122,6 +124,7 @@ public void goster()
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dovusdeneme);
 
+        khp=findViewById(R.id.khp);
         yetenek=findViewById(R.id.skill);
         g_tur = findViewById(R.id.tur);
         dhp = findViewById(R.id.dhp);
@@ -129,6 +132,7 @@ public void goster()
         log = new ArrayList<String>();
         isim = findViewById(R.id.g_ad);
         g_hp = findViewById(R.id.g_hp);
+        d_hp = findViewById(R.id.progressBar2);
         atak = findViewById(R.id.b_attack);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, log);
 
@@ -153,12 +157,16 @@ public void goster()
                 int hit = 0;
                 Random rnd = new Random();
                 if (karakter.pasif == 0){
-                    if (karakter.hp / 100 * 15 > hp) {
+                    if ((karakter.hp / 100 )* 15 > hp) {
                         hit = rnd.nextInt(karakter.stat[0] + 20) + 1 + karakter.stat[0] * 3 + (karakter.hp - hp) / 5;
                     }
-            }
+                    else {
+                        hit = rnd.nextInt(karakter.stat[0] + 20) + 1 + karakter.stat[0] * 3;
+                    }
+                 }
                else {
                    hit = rnd.nextInt(karakter.stat[0] + 20) + 1 + karakter.stat[0] * 3;
+
                 }
                 dusman[dusmansayisi][0] -= hit;
                 log.add("Düşmana" + String.valueOf(hit) + " kadar hasar verdiniz");
