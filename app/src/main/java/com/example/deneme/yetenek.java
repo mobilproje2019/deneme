@@ -130,7 +130,7 @@ public class yetenek extends AppCompatActivity {
         Toast.makeText(yetenek.this, "Bu Yetenek için"+karakter.skills[1][0] +"seviye olmalısınız.", Toast.LENGTH_SHORT).show();
     }
     else {
-        if (tur < yetenekler.getSkill_2CD()) {
+        if (tur<yetenekler.k[1]) {
             Toast.makeText(yetenek.this, "Henüz Hazır Değil", Toast.LENGTH_SHORT).show();
         } else {
                 yetenekler.setSkill_2CD(cdorj[1]+tur);
@@ -139,9 +139,8 @@ public class yetenek extends AppCompatActivity {
                 yetenek[i] = karakter.skills[1][i];
             }
 
-            Intent skill = new Intent(yetenek.this, dovusdeneme.class);
-            skill.putExtra("yetenek", yetenek);
-            startActivity(skill);
+            kaynaklar.setYetenek(yetenek);
+            finish();
         }
     }
     }
@@ -152,7 +151,7 @@ public class yetenek extends AppCompatActivity {
             Toast.makeText(yetenek.this, "Bu Yetenek için"+karakter.skills[2][0] +"seviye olmalısınız.", Toast.LENGTH_SHORT).show();
         }
     else {
-            if (tur < yetenekler.getSkill_3CD()) {
+            if (tur<yetenekler.k[2]) {
                 Toast.makeText(yetenek.this, "Henüz Hazır Değil", Toast.LENGTH_SHORT).show();
             } else {
                 yetenekler.setSkill_3CD(cdorj[2]+tur);
@@ -161,9 +160,8 @@ public class yetenek extends AppCompatActivity {
                     yetenek[i] = karakter.skills[2][i];
                 }
 
-                Intent skill = new Intent(yetenek.this, dovusdeneme.class);
-                skill.putExtra("yetenek", yetenek);
-                startActivity(skill);
+                kaynaklar.setYetenek(yetenek);
+                finish();
             }
         }
     }

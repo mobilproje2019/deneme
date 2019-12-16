@@ -153,6 +153,7 @@ public class anaekran extends AppCompatActivity {
                     unlocks.balta=0;
                     unlocks.kilic=0;
                     unlocks.maden=0;
+                    unlocks.demirci=0;
                     kaynaklar.maxtas =9999;
                     kaynaklar.maxodun =9999;
                     kaynaklar.dtas=9999;
