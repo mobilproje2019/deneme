@@ -190,6 +190,8 @@ public class anaekran extends AppCompatActivity {
             fight.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    for ( int i=0;i<3;i++)
+                        Yetenekler.k[i]=karakter.skills[i][4];
                     Intent i = new Intent(getApplicationContext(),dovusdeneme.class);
                     startActivity(i);
                 }

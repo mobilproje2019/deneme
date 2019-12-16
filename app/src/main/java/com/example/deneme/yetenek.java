@@ -18,12 +18,15 @@ public class yetenek extends AppCompatActivity {
     int[] cdorj={karakter.skills[0][4],karakter.skills[1][4],karakter.skills[2][4]};
     int tur=0;
     Yetenekler yetenekler = new Yetenekler();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_yetenek);
 
-        yetenekler.initcharacter(karakter.pasif);
+
+
     //region ID Tanımlamaları
         pasif=findViewById(R.id.pasif);
         skill1=findViewById(R.id.skill1);
@@ -58,7 +61,7 @@ public class yetenek extends AppCompatActivity {
        Bundle intent=getIntent().getExtras();
        if(intent!=null)
        tur=intent.getInt("tur");
-
+        yetenekler.initcharacter(karakter.pasif);
        //region Yazı veya reismin üstüne basınca
 
        g_skill1.setOnClickListener(new View.OnClickListener() {
@@ -109,12 +112,12 @@ public class yetenek extends AppCompatActivity {
 
     public void skill1()
     {
-        if(tur<yetenekler.k[0])
+        if(tur+1<yetenekler.k[0])
         {
             Toast.makeText(yetenek.this, "Henüz Hazır Değil", Toast.LENGTH_SHORT).show();
         }
         else {
-            yetenekler.k[0]=cdorj[0]+tur;
+            yetenekler.k[0]+=tur;
             int[] yetenek = new int[karakter.skills[1].length];
             for (int i = 0; i < karakter.skills[1].length; i++) {
                 yetenek[i] = karakter.skills[0][i];
@@ -130,10 +133,10 @@ public class yetenek extends AppCompatActivity {
         Toast.makeText(yetenek.this, "Bu Yetenek için"+karakter.skills[1][0] +"seviye olmalısınız.", Toast.LENGTH_SHORT).show();
     }
     else {
-        if (tur<yetenekler.k[1]) {
+        if (tur+1<yetenekler.k[1]) {
             Toast.makeText(yetenek.this, "Henüz Hazır Değil", Toast.LENGTH_SHORT).show();
         } else {
-                yetenekler.setSkill_2CD(cdorj[1]+tur);
+               yetenekler.k[1]+=tur;
             int[] yetenek = new int[karakter.skills[1].length];
             for (int i = 0; i < karakter.skills[1].length; i++) {
                 yetenek[i] = karakter.skills[1][i];
@@ -151,10 +154,10 @@ public class yetenek extends AppCompatActivity {
             Toast.makeText(yetenek.this, "Bu Yetenek için"+karakter.skills[2][0] +"seviye olmalısınız.", Toast.LENGTH_SHORT).show();
         }
     else {
-            if (tur<yetenekler.k[2]) {
+            if (tur+1<yetenekler.k[2]) {
                 Toast.makeText(yetenek.this, "Henüz Hazır Değil", Toast.LENGTH_SHORT).show();
             } else {
-                yetenekler.setSkill_3CD(cdorj[2]+tur);
+                yetenekler.k[2]+=tur;
                 int[] yetenek = new int[karakter.skills.length];
                 for (int i = 0; i < karakter.skills.length; i++) {
                     yetenek[i] = karakter.skills[2][i];
