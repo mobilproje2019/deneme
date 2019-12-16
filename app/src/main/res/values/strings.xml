@@ -25,4 +25,45 @@
         \n\n
 
     </string>
+    <string name="Quest_2">
+        Köylüleri madenden kurtarmayı başardın. Aralarından biri Demirci olduğunu, sana daha iyi silah ve aletler yapabileceğini söyledi.
+        Ancak madendeki goblinler demirci atolyesini yerle bir etmiş.
+        Gerekli malzemeleri toplayıp atolyeyi yeniden inşaa et.
+
+        Gerekli Malzemeler:
+        Odun 250 Adet
+        Taş 150 Adet
+        Tahta 200 Adet
+        Düz Taş 100 Adet
+    </string>
+    <string name="demirci">
+        Demirci sana yeni bir kazma yaptı bu kazma sayesinde artık demir madeni kazabilir ve demirciye bu madenleri işletebilirsin.
+
+        Demir Çekiç : 5 Çubuk + 9 Demir
+        Demir Balta : 5 Çubuk + 5 Demir
+        Demir Kılıç : 3 Çubuk + 8 Demir
+        Demir Kask : 15 Demir
+        Demir Gövdelik : 25 Demir
+        Demir Bacaklık : 18 Demir
+        Demir Botlar : 12 Demir
+    </string>
+    <string name="Quest_3">
+        Kurtardığın köylüler sana minnetar ve senden bir iyilik istiyorlar.
+        Görünüşe bakılırsa şehire giden tek yol haydutlar tarafından ele geçirilmiş.
+        Haydutları yenerek şehre giden yolu tekrar açabilirsin.
+    </string>
+    <string name="Köprü">
+        Hayduları yenmeyi başardın. Ancak bir haydut kaçmadan önce köprüyü patlayıcılarla patlattı.
+        Karşıa tarafa geçebilmek için köprüyü yeniden inşaa et.
+
+        Gerekli Malzemeler:
+        Odun 250 Adet
+        Taş 150 Adet
+        Tahta 200 Adet
+        Düz Taş 100 Adet
+    </string>
+    <string name="Quest_4">
+
+    </string>
+
 </resources>
