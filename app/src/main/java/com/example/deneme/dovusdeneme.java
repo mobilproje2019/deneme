@@ -25,7 +25,7 @@ public class dovusdeneme extends AppCompatActivity {
     ProgressBar g_hp,d_hp;
     ListView list;
     ArrayAdapter<String> adapter;
-    Button atak,yetenek;
+    Button atak,yetenek,item;
 
     int d_seviye=1;
     int etki=0;
@@ -112,7 +112,6 @@ public void goster()
             Random rnd =new Random();
         int seviye=rnd.nextInt(makslevel)+makslevel/2+1;
        dusman[i][0] = com.example.deneme.dusman.dusman[tip][1] + seviye*2;
-       dusman[0][0]=9999;
        dusman[i][1]=com.example.deneme.dusman.dusman[tip][2] + seviye*2;
        dusman[i][2]= com.example.deneme.dusman.dusman[tip][3];
         }
@@ -134,6 +133,7 @@ public void goster()
         g_hp = findViewById(R.id.g_hp);
         d_hp = findViewById(R.id.progressBar2);
         atak = findViewById(R.id.b_attack);
+        item = findViewById(R.id.item);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, log);
 
         log.add(" ");
@@ -193,8 +193,18 @@ public void goster()
         });
         //endregion
 
+        //region Item
+        item.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(dovusdeneme.this,"İlk önce Çanta üretmelisin.",Toast.LENGTH_SHORT).show();
+            }
+        });
+        //endregion
+
 
     }
+
 
     //region Kazanma
     public  void kazandın()

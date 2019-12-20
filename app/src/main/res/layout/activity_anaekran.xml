@@ -211,7 +211,7 @@
         android:id="@+id/sehir"
         android:layout_width="56dp"
         android:layout_height="64dp"
-        android:background="@android:drawable/stat_sys_upload"
+        android:background="@drawable/sehiri"
         android:backgroundTint="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

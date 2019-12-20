@@ -18,6 +18,7 @@ public class olusturma extends AppCompatActivity {
     RadioButton war,asa,mag;
     RadioGroup r_sinif;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,22 +41,30 @@ public class olusturma extends AppCompatActivity {
                 karakter.isim = isim.getText().toString();
 
                 if (war.isChecked()) {
+                    if(karakter.stat[0]<2&&karakter.stat[2]<2&&karakter.stat[1]<2){
                     karakter.stat[0] += 2;
+                    }
                     karakter.pasif=0;
                     karakter.skills=karakter.warrior;
                 }
                 else if (asa.isChecked()){
+                    if(karakter.stat[0]<2&&karakter.stat[2]<2&&karakter.stat[1]<2)
                 karakter.stat[1]+=2;
                 karakter.pasif=1;
                 karakter.skills=karakter.assassin;
                 }
                 else {
+                    if(karakter.stat[0]<2&&karakter.stat[2]<2&&karakter.stat[1]<2)
                     karakter.stat[2] += 2;
                     karakter.pasif=2;
                     karakter.skills=karakter.mage;
                 }
                 Intent anaekran = new Intent(olusturma.this, stat.class);
+                if(!karakter.olusturdu)
                 karakter.point=3;
+                else
+                    karakter.point=0;
+                    karakter.olusturdu=true;
                 startActivity(anaekran);
             }else if(isim.getText().toString().equals("A") || isim.getText().toString().equals("a"))
                 {

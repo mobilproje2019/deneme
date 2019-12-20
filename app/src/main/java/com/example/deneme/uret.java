@@ -88,6 +88,14 @@ public class uret extends AppCompatActivity {
     }
     //endregion
 
+    public  void kaynakguncelle(){
+        kaynaklar.odun=odun;
+        kaynaklar.isci=isci;
+        kaynaklar.tas=tas;
+        kaynaklar.gun=gun;
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,8 +121,8 @@ public class uret extends AppCompatActivity {
         g_tas=findViewById(R.id.g_tas);
         g_gun=findViewById(R.id.g_gun);
 
-        b_gosterge=new ImageButton[]{kulube,depo,ev,atolye,demirci};
-        t_gosterge=new TextView[]{t_kk,t_depo,t_ev,t_atolye,t_demirci};
+        b_gosterge=new ImageButton[]{kulube,depo,ev,atolye,demirci,kopru};
+        t_gosterge=new TextView[]{t_kk,t_depo,t_ev,t_atolye,t_demirci,t_kopru};
 
 
         t_depo.setText("\nDepo\n"+String.valueOf(yapilar.yapi[1][0])+" Odun"+" "+String.valueOf(yapilar.yapi[1][1])+" Taş");
@@ -142,6 +150,7 @@ public class uret extends AppCompatActivity {
                    yapilar.yapi[1][3]=0;
                    yapilar.yapi[2][3]=0;
                    unlocks.kk=0;
+                   kaynakguncelle();
                    refresh(b_gosterge,t_gosterge);
                }
             }
@@ -154,6 +163,7 @@ public class uret extends AppCompatActivity {
             public void onClick(View view) {
                 if(yap(2)) {
                     yapilar.yapi[3][3] = 0;
+                    kaynakguncelle();
                     unlocks.ev = 0;
                 }
                 refresh(b_gosterge,t_gosterge);
@@ -169,6 +179,7 @@ public class uret extends AppCompatActivity {
            if(yap(3))
            {
                unlocks.atolye=0;
+               kaynakguncelle();
                refresh(b_gosterge,t_gosterge);
            }
             }
@@ -209,7 +220,7 @@ public class uret extends AppCompatActivity {
 
                         yapilar.yapi[1][0]*=1.5*yapilar.yapi[1][4]/2;
                         yapilar.yapi[1][1]+=50;
-
+                        kaynakguncelle();
                         t_depo.setText("\nDepo\n"+String.valueOf(yapilar.yapi[1][0])+" Odun"+" "+String.valueOf(yapilar.yapi[1][1])+" Taş");
                         refresh(b_gosterge,t_gosterge);
                     }
@@ -229,6 +240,9 @@ public class uret extends AppCompatActivity {
                 if(yap(4)) {
                     yapilar.yapi[4][3] = 0;
                     unlocks.demirci = 0;
+                    yapilar.yapi[5][3]=0;
+                    kaynakguncelle();
+                    Toast.makeText(uret.this,R.string.Quest_3,Toast.LENGTH_SHORT).show();
                 }
                 refresh(b_gosterge,t_gosterge);
             }
@@ -241,6 +255,7 @@ public class uret extends AppCompatActivity {
             public void onClick(View v) {
                 if(yap(5)){
                 yapilar.yapi[5][3]=0;
+                kaynakguncelle();
                 unlocks.kopru=0;
                 }
             }

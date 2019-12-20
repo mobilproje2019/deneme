@@ -95,6 +95,8 @@ public class anaekran extends AppCompatActivity {
             b_sehir.setVisibility(View.INVISIBLE);
         else
             b_sehir.setVisibility(View.VISIBLE);
+        if(karakter.isim!="a" || karakter.isim!="A")
+            cheat.setVisibility(View.INVISIBLE);
 
         if (unlocks.kk == 0)
         {

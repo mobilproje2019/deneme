@@ -7,4 +7,45 @@
     android:background="@drawable/sehir"
     tools:context=".sehir">
 
+    <Button
+        android:id="@+id/item"
+        android:layout_width="68dp"
+        android:layout_height="65dp"
+        android:background="@drawable/buyucu"
+        android:text="Büyücü"
+        android:textColor="@color/ogle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.224" />
+
+    <Button
+        android:id="@+id/guild"
+        android:layout_width="59dp"
+        android:layout_height="58dp"
+        android:background="@drawable/guild"
+        android:text="Klan"
+        android:textColor="@color/ogle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.189" />
+
+    <Button
+        android:id="@+id/shop"
+        android:layout_width="60dp"
+        android:layout_height="53dp"
+        android:background="@drawable/shop"
+        android:text="Dükkan"
+        android:textColor="@color/ogle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.783"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.423" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,10 +7,10 @@ public class karakter {
     public static int cxp=0;
     public static int nxp=155;
     public static int point=0;
-
+    public static boolean olusturdu=false;
     public static int hp=100;
 
-    public static int pasif=0;  // 0 warior 1 Assassin 2 Mage
+    public static int pasif=-1;  // 0 warior 1 Assassin 2 Mage
     public static int[] stat={1,1,1}; // Str Agi Int
 
 
