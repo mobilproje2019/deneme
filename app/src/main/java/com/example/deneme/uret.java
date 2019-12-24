@@ -216,10 +216,10 @@ public class uret extends AppCompatActivity {
                         g_yaz(g_tas,tas);
 
                         kaynaklar.maxtas +=60;
-                        kaynaklar.maxodun +=100+(20*yapilar.yapi[1][4]);
+                        kaynaklar.maxodun +=150+(20*yapilar.yapi[1][4]);
 
-                        yapilar.yapi[1][0]*=1.5*yapilar.yapi[1][4]/2;
-                        yapilar.yapi[1][1]+=50;
+                        yapilar.yapi[1][0]+=150;
+                        yapilar.yapi[1][1]+=60;
                         kaynakguncelle();
                         t_depo.setText("\nDepo\n"+String.valueOf(yapilar.yapi[1][0])+" Odun"+" "+String.valueOf(yapilar.yapi[1][1])+" Taş");
                         refresh(b_gosterge,t_gosterge);

@@ -158,9 +158,11 @@ public class atolye extends AppCompatActivity {
             public void onClick(View view) {
                 if(uret(1))
                 {
-                    kaynaklar.dtas+=5;
-                    kaynaklar.tas-=25;
-
+                    if(kaynaklar.tas>25)
+                    {
+                        kaynaklar.dtas+=5;
+                        kaynaklar.tas-=25;
+                    }
                     tas=kaynaklar.tas;
                     dtas=kaynaklar.dtas;
                     yenile();
@@ -170,13 +172,13 @@ public class atolye extends AppCompatActivity {
         });
         //endregion
 
-        //region Çubuk Butonu
         b_cubuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(uret(2))
                 {
                     kaynaklar.cubuk+=5;
+        //region Çubuk Butonu
                     kaynaklar.tahta-=2;
 
                     cubuk=kaynaklar.cubuk;
