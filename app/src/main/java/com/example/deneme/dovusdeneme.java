@@ -215,8 +215,7 @@ public void goster()
         for ( int i=0;i<3;i++)
             Yetenekler.k[i]=karakter.skills[i][4];
         yapilar.yapi[4][3]=0;
-        Intent intent=new Intent(this,anaekran.class);
-        startActivity(intent);
+       finish();
     }
 //endregion
 
