@@ -171,7 +171,7 @@ public class uret extends AppCompatActivity {
         });
         //endregion
 
-        //region atolye butonu
+        //region Atolye butonu
 
         atolye.setOnClickListener(new View.OnClickListener() {
             @Override
