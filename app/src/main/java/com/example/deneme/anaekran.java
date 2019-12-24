@@ -197,6 +197,7 @@ public class anaekran extends AppCompatActivity {
                     for ( int i=0;i<3;i++)
                         Yetenekler.k[i]=karakter.skills[i][4];
                     Intent i = new Intent(getApplicationContext(),dovusdeneme.class);
+                    i.putExtra("dusmanhp",2000);
                     startActivity(i);
                 }
             });

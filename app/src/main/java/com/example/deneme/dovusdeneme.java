@@ -149,6 +149,7 @@ public void goster()
         Bundle intent=getIntent().getExtras();
         if(intent!=null) {
             skill = intent.getIntArray("yetenek");
+            dusman[dusmansayisi][0]=intent.getInt("dusman");
         }
 //region Attack
         atak.setOnClickListener(new View.OnClickListener() {

@@ -89,6 +89,7 @@ public class olusturma extends AppCompatActivity {
                     kaynaklar.tahta=9999;
                     Intent anaekran = new Intent(olusturma.this, stat.class);
                     karakter.point=0;
+
                     startActivity(anaekran);
                     //endregion
 

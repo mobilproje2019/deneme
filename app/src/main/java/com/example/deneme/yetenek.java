@@ -56,7 +56,7 @@ public class yetenek extends AppCompatActivity {
        g_skill2ac.setText(yetenekler.getSkill_2());
        g_skill3.setText(yetenekler.getSkill_3Name());
        g_skill3ac.setText(yetenekler.getSkill_3());
-
+        names();
 //endregion
        Bundle intent=getIntent().getExtras();
        if(intent!=null)
@@ -109,7 +109,17 @@ public class yetenek extends AppCompatActivity {
 
     }
 
-
+    public void names()
+    {
+        g_pasif.setText(yetenekler.getPassiveName());
+        pasifac.setText(yetenekler.getPassive());
+        g_skill1.setText(yetenekler.getSkill_1Name());
+        g_skill1ac.setText(yetenekler.getSkill_1());
+        g_skill2.setText(yetenekler.getSkill_2Name());
+        g_skill2ac.setText(yetenekler.getSkill_2());
+        g_skill3.setText(yetenekler.getSkill_3Name());
+        g_skill3ac.setText(yetenekler.getSkill_3());
+    }
     public void skill1()
     {
         if(tur+1<yetenekler.k[0])
