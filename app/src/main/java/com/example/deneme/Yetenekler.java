@@ -14,7 +14,10 @@ public class Yetenekler {
 
     public static int[] k=new int[3];
 
-
+    public Yetenekler()
+    {
+        initcharacter(karakter.pasif);
+    }
     //region GET SET
     public String getPassiveName() {
         return passiveName;
@@ -83,8 +86,7 @@ public class Yetenekler {
         Skill_3CD = skill_3CD;
     }
     //endregion
-    public  void initcharacter(int pasif)
-    {
+    public  void initcharacter(int pasif){
         if(pasif==0)
         {
             setPassiveName(karakter.aciklama[0][0]);
@@ -98,9 +100,6 @@ public class Yetenekler {
             setSkill_3Name(karakter.aciklama[0][6]);
             setSkill_3(karakter.aciklama[0][7]);
             setSkill_3CD(6);
-          //  k[0]=3;
-          //  k[1]=4;
-          //  k[2]=6;
         }
         else if(pasif==1)
         {
@@ -115,9 +114,6 @@ public class Yetenekler {
             setSkill_3Name(karakter.aciklama[1][6]);
             setSkill_3(karakter.aciklama[1][7]);
             setSkill_3CD(4);
-         //   k[0]=3;
-          //  k[1]=5;
-         //   k[2]=4;
         }
         else
         {
@@ -132,9 +128,6 @@ public class Yetenekler {
             setSkill_3Name(karakter.aciklama[2][6]);
             setSkill_3(karakter.aciklama[2][7]);
             setSkill_3CD(6);
-          //  k[0]=2;
-         //   k[1]=3;
-         //   k[2]=6;
         }
     }
 

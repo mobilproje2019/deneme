@@ -146,7 +146,7 @@ public class anaekran extends AppCompatActivity {
         g_gun = findViewById(R.id.g_gun);
         nesne=findViewById(R.id.back);
 //endregion
-//region DEBUG Butonu
+    //region DEBUG Butonu
         cheat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -181,8 +181,7 @@ public class anaekran extends AppCompatActivity {
             }
         });
 //endregion
-
-//region Başlangıç Yazdırımı
+// region Başlangıç Yazdırımı
         g_yaz(g_odun, odun, maxodun);
         g_yaz(g_tas, tas, maxtas);
         g_yaz(g_gun, gun, 0);
@@ -207,7 +206,6 @@ public class anaekran extends AppCompatActivity {
         b_topla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (g_zaman + 1 < 13) {
                     Random rand = new Random();
                     tas += rand.nextInt(2) + 1;
                     odun += rand.nextInt(1) + 1;
@@ -217,9 +215,6 @@ public class anaekran extends AppCompatActivity {
                         tas = maxtas;
                     g_yaz(g_odun, odun, maxodun);
                     g_yaz(g_tas, tas, maxtas);
-                } else {
-                    Toast.makeText(anaekran.this, "Daha Fazla Çalışamazsın Lütfen Uyu", Toast.LENGTH_SHORT).show();
-                }
             }
         });
         //endregion
@@ -228,16 +223,12 @@ public class anaekran extends AppCompatActivity {
         b_odun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (g_zaman + 3 < 13) {
                     Random random = new Random();
                     odun += random.nextInt(5) + 3;
                     if (odun > maxodun)
                         odun = maxodun;
                     g_yaz(g_odun, odun, maxodun);
                     kaynaklar.odun=odun;
-                } else
-                    Toast.makeText(anaekran.this, "Daha Fazla Çalışamazsın Lütfen Uyu", Toast.LENGTH_SHORT).show();
-
             }
         });
 
@@ -304,16 +295,12 @@ public class anaekran extends AppCompatActivity {
                  //region Görev Tamalanmışsa
                    else
                    {
-                       if (g_zaman + 3 < 13) {
                            Random random = new Random();
                            tas += random.nextInt(5) + 3;
                            if (tas > maxtas)
                                tas = maxtas;
                            g_yaz(g_tas, tas, maxtas);
                            kaynaklar.tas=tas;
-                       }
-                       else
-                           Toast.makeText(anaekran.this, "Daha Fazla Çalışamazsın Lütfen Uyu", Toast.LENGTH_SHORT).show();
 
                    }
                    //endregion
