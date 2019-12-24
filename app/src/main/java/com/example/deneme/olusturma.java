@@ -71,22 +71,23 @@ public class olusturma extends AppCompatActivity {
                     //region Admin Mod
                     karakter.isim = isim.getText().toString();
                     karakter.sinif = r_sinif.getCheckedRadioButtonId();
-                    karakter.pasif=2;
-                    karakter.skills=karakter.mage;
-                    yapilar.yapi[1][3]=0;
-                    yapilar.yapi[2][3]=0;
-                    unlocks.kk=0;
-                    yapilar.yapi[3][3] = 0;
-                    unlocks.ev = 0;
-                    unlocks.atolye=0;
-                    unlocks.balta=0;
-                    unlocks.kilic=0;
-                    unlocks.maden=0;
-                    kaynaklar.maxtas =9999;
-                    kaynaklar.maxodun =9999;
-                    kaynaklar.dtas=9999;
-                    kaynaklar.cubuk=9999;
-                    kaynaklar.tahta=9999;
+
+                    if(war.isChecked())
+                    {
+                        karakter.pasif=0;
+                        karakter.skills=karakter.warrior;
+                    }
+                    if(asa.isChecked())
+                    {
+                        karakter.pasif=1;
+                        karakter.skills=karakter.assassin;
+                    }
+                    if(mag.isChecked())
+                    {
+                        karakter.pasif=2;
+                        karakter.skills=karakter.mage;
+                    }
+
                     Intent anaekran = new Intent(olusturma.this, stat.class);
                     karakter.point=0;
 
