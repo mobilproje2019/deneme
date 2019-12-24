@@ -42,6 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView"
+                    android:textColor="@color/ogle"
                     android:textSize="18sp" />
 
                 <TextView
@@ -51,6 +52,7 @@
                     android:layout_weight="1"
                     android:text="Tur:"
                     android:textAlignment="textEnd"
+                    android:textColor="@color/ogle"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -59,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="HP"
+                android:textColor="@color/ogle"
                 android:textSize="18sp" />
 
             <Space
@@ -96,6 +99,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Düşman:"
+                        android:textColor="@color/ogle"
                         android:textSize="18sp" />
 
                     <ProgressBar
@@ -123,11 +127,14 @@
 
                     <Button
                         android:id="@+id/b_attack"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="100"
+                        android:background="@drawable/attack"
+                        android:backgroundTint="@android:color/black"
                         android:text="Attack"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="@color/ogle" />
 
                     <Space
                         android:layout_width="wrap_content"
@@ -137,9 +144,12 @@
                     <Button
                         android:id="@+id/skill"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Yetenek" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="100"
+                        android:background="@drawable/skill"
+                        android:backgroundTint="@android:color/black"
+                        android:text="Yetenek"
+                        android:textColor="@color/ogle" />
 
                     <Space
                         android:layout_width="wrap_content"
@@ -148,10 +158,13 @@
 
                     <Button
                         android:id="@+id/item"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="İtem" />
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="100"
+                        android:background="@drawable/item"
+                        android:backgroundTint="@android:color/black"
+                        android:text="İtem"
+                        android:textColor="@color/ogle" />
 
                 </LinearLayout>
 

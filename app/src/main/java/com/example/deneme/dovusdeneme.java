@@ -92,14 +92,21 @@ public void goster()
         log.remove(0);
     }
     g_tur.setText("Tur:"+tur);
+    if(dusman[dusmansayisi][0]<0)
+        dusman[dusmansayisi][0]=0;
     dhp.setText("Düşman: "+dusman[dusmansayisi][0]);
+    if(hp<0)
+        hp=0;
     khp.setText("Canın : "+hp);
     adapter.notifyDataSetChanged();
     if( dusman[dusmansayisi][0]<1)
     {
-        //kazandın();
+        kazandın();
     }
-
+    if(hp<1)
+    {
+        kaybetme();
+    }
 }
 //endregion
 
@@ -111,7 +118,7 @@ public void goster()
         {
             Random rnd =new Random();
         int seviye=rnd.nextInt(makslevel)+makslevel/2+1;
-       dusman[i][0] = com.example.deneme.dusman.dusman[tip][1] + seviye*2;
+       dusman[i][0] = rnd.nextInt(com.example.deneme.dusman.dusman[tip][1]*3)+com.example.deneme.dusman.dusman[tip][1] + seviye*2;
        dusman[i][1]=com.example.deneme.dusman.dusman[tip][2] + seviye*2;
        dusman[i][2]= com.example.deneme.dusman.dusman[tip][3];
         }

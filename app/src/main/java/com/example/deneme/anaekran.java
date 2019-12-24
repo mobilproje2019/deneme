@@ -1,11 +1,16 @@
 package com.example.deneme;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -325,8 +330,21 @@ public class anaekran extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
+        AlertDialog.Builder builder = new AlertDialog.Builder(anaekran.this);
+        builder.setCancelable(false);
+        builder.setMessage("Anamenüye dönmek istediğinize emin misiniz?");
+        builder.setNegativeButton("Hayır", null);
+        builder.setPositiveButton("Evet", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent k=new Intent(anaekran.this,MainActivity.class);
+                startActivity(k);
+                finish();
+            }
+        });
+        builder.show();
     }
+
 
     public void onResume() {
         super.onResume();
