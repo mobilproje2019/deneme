@@ -7,9 +7,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -23,6 +25,8 @@ import java.util.TimerTask;
 
 
 public class anaekran extends AppCompatActivity {
+
+    MediaPlayer medya;
 
     //region Butonlar , TetxViewlar
     Button b_odun;
@@ -229,12 +233,16 @@ public class anaekran extends AppCompatActivity {
         b_odun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                   Random rnd=new Random();
                     Random random = new Random();
                     odun += random.nextInt(5) + 3;
                     if (odun > maxodun)
                         odun = maxodun;
                     g_yaz(g_odun, odun, maxodun);
                     kaynaklar.odun=odun;
+                   medya=MediaPlayer.create(anaekran.this,sesler.odun[  rnd.nextInt(4)]);
+                   medya.start();
+
             }
         });
 
@@ -301,6 +309,9 @@ public class anaekran extends AppCompatActivity {
                  //region Görev Tamalanmışsa
                    else
                    {
+                       medya= MediaPlayer.create(anaekran.this,R.raw.maden);
+                       medya.start();
+                       medya.release();
                            Random random = new Random();
                            tas += random.nextInt(5) + 3;
                            if (tas > maxtas)

@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
@@ -26,6 +28,7 @@ public class dovusdeneme extends AppCompatActivity {
     ListView list;
     ArrayAdapter<String> adapter;
     Button atak,yetenek,item;
+    MediaPlayer attack,medya;
 
     int d_seviye=1;
     int etki=0;
@@ -48,6 +51,9 @@ public class dovusdeneme extends AppCompatActivity {
             if(ihtimal<4 && karakter.pasif==1)
             {
                 log.add("Saldırıdan Kurtuldun");
+                medya= MediaPlayer.create(dovusdeneme.this,R.raw.dodge);
+                medya.start();
+                medya.release();
             }
             else {
                 if (etki == 1) {
@@ -162,8 +168,10 @@ public void goster()
         atak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                attack=MediaPlayer.create(dovusdeneme.this,R.raw.attack);
                 int hit = 0;
                 Random rnd = new Random();
+                attack.start();
                 if (karakter.pasif == 0){
                     if ((karakter.hp / 100 )* 15 > hp) {
                         hit = rnd.nextInt(karakter.stat[0] + 20) + 1 + karakter.stat[0] * 3 + (karakter.hp - hp) / 5;
@@ -271,6 +279,8 @@ public void goster()
             if (skill[0] == 0) {
                 log.add("Rakibe Bir Hançer Fırlattın.");
                 dusman[dusmansayisi][0]-=50+(karakter.seviye*2+karakter.stat[1]);
+                medya= MediaPlayer.create(dovusdeneme.this,R.raw.assassinskill1);
+                medya.start();
                 dusmanvurus();
                 goster();
             }
@@ -298,12 +308,18 @@ public void goster()
                 log.add("Ağır Darbe Yeteneğiyle Düşmanı 1 Tur Etkisiz Kıldın.");
                 dusman[dusmansayisi][0]-=100+(karakter.seviye*2+karakter.stat[0]);
                 etki=1;
+                medya= MediaPlayer.create(dovusdeneme.this,R.raw.warriorskill1);
+                medya.start();
+                medya.release();
                 dusmanvurus();
                 goster();
             }
             else if (skill[0] == 2) {
                 log.add("Saf Gücünle Düşmana Atıldın.");
                 dusman[dusmansayisi][0]-=120+(karakter.seviye*2+karakter.stat[0]);
+                medya= MediaPlayer.create(dovusdeneme.this,R.raw.warriorskill2);
+                medya.start();
+                medya.release();
                 dusmanvurus();
                 goster();
             }
