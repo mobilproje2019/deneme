@@ -14,6 +14,7 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +42,7 @@ public class anaekran extends AppCompatActivity {
     TextView g_isci;
     TextView g_tas;
     TextView g_gun;
+    ImageView demirci;
     //endregion
     public static ConstraintLayout nesne;
 
@@ -142,6 +144,7 @@ public class anaekran extends AppCompatActivity {
 
     //region id bağdaştırımı
         fight=findViewById(R.id.btndovus);
+        demirci=findViewById(R.id.demirci);
         b_topla = findViewById(R.id.b_topla);
         b_sehir = findViewById(R.id.sehir);
         b_odun = findViewById(R.id.b_odun);
@@ -326,7 +329,21 @@ public class anaekran extends AppCompatActivity {
             }
         });
 //endregion
-
+//region Demirci
+            demirci.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (unlocks.kk == 0)
+                    {
+                        if(unlocks.demirci==0)
+                        {
+                            Intent i = new Intent(getApplicationContext(),demirci.class);
+                            startActivity(i);
+                        }
+                    }
+                }
+            });
+        //endregion
 //region Şehir
         b_sehir.setOnClickListener(new View.OnClickListener() {
             @Override
