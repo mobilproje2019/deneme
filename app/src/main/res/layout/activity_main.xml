@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/button2"
         android:layout_width="0dp"
         android:layout_height="53dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
         android:text="Load Game"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -22,7 +26,10 @@
         android:id="@+id/button"
         android:layout_width="0dp"
         android:layout_height="53dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
         android:text="New Game"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

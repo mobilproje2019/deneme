@@ -28,7 +28,7 @@ public class dovusdeneme extends AppCompatActivity {
     ListView list;
     ArrayAdapter<String> adapter;
     Button atak,yetenek,item;
-    MediaPlayer attack,medya;
+    MediaPlayer attack,medya,music,galibiyet;
 
     int d_seviye=1;
     int etki=0;
@@ -136,6 +136,8 @@ public void goster()
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dovusdeneme);
 
+        music=MediaPlayer.create(dovusdeneme.this,R.raw.battle2);
+        music.start();
         khp=findViewById(R.id.khp);
         yetenek=findViewById(R.id.skill);
         g_tur = findViewById(R.id.tur);
@@ -225,6 +227,11 @@ public void goster()
     //region Kazanma
     public  void kazandın()
     {
+
+        music.release();
+
+        galibiyet=MediaPlayer.create(dovusdeneme.this,R.raw.galibiyet);
+        galibiyet.start();
         Toast.makeText(dovusdeneme.this,"Madendeki Goblinleri Yenerek Madeni Güvenli Bir Hale Getirdin ve Esirleri Kurtardın. İçlerinden Biri Demirci olduğunu söylüyor",Toast.LENGTH_SHORT).show();
         unlocks.q1=0;
         for ( int i=0;i<3;i++)

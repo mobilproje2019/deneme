@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/gece"
+    android:background="@drawable/magara"
     tools:context=".dovusdeneme">
 
     <LinearLayout
@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView"
-                    android:textColor="@color/ogle"
+                    android:textColor="@color/design_default_color_primary"
                     android:textSize="18sp" />
 
                 <TextView
@@ -52,7 +52,7 @@
                     android:layout_weight="1"
                     android:text="Tur:"
                     android:textAlignment="textEnd"
-                    android:textColor="@color/ogle"
+                    android:textColor="@color/design_default_color_primary"
                     android:textSize="18sp" />
             </LinearLayout>
 
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="HP"
-                android:textColor="@color/ogle"
+                android:textColor="@color/design_default_color_primary"
                 android:textSize="18sp" />
 
             <Space
@@ -99,7 +99,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Düşman:"
-                        android:textColor="@color/ogle"
+                        android:textColor="@color/design_default_color_primary"
                         android:textSize="18sp" />
 
                     <ProgressBar
@@ -131,9 +131,8 @@
                         android:layout_height="match_parent"
                         android:layout_weight="100"
                         android:background="@drawable/attack"
-                        android:backgroundTint="@android:color/black"
-                        android:text="Attack"
-                        android:textAlignment="center"
+                        android:text=" "
+                        android:textAlignment="gravity"
                         android:textColor="@color/ogle" />
 
                     <Space
@@ -147,8 +146,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="100"
                         android:background="@drawable/skill"
-                        android:backgroundTint="@android:color/black"
-                        android:text="Yetenek"
+                        android:text=" "
                         android:textColor="@color/ogle" />
 
                     <Space
@@ -162,8 +160,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="100"
                         android:background="@drawable/item"
-                        android:backgroundTint="@android:color/black"
-                        android:text="İtem"
+                        android:text=" "
                         android:textColor="@color/ogle" />
 
                 </LinearLayout>

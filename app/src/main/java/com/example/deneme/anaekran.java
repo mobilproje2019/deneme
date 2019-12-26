@@ -27,7 +27,7 @@ import java.util.TimerTask;
 
 public class anaekran extends AppCompatActivity {
 
-    MediaPlayer medya;
+    MediaPlayer medya,medya2;
 
     //region Butonlar , TetxViewlar
     Button b_odun;
@@ -42,7 +42,7 @@ public class anaekran extends AppCompatActivity {
     TextView g_isci;
     TextView g_tas;
     TextView g_gun;
-    ImageView demirci;
+    Button b_demirci;
     //endregion
     public static ConstraintLayout nesne;
 
@@ -144,7 +144,7 @@ public class anaekran extends AppCompatActivity {
 
     //region id bağdaştırımı
         fight=findViewById(R.id.btndovus);
-        demirci=findViewById(R.id.demirci);
+        b_demirci=findViewById(R.id.demirci);
         b_topla = findViewById(R.id.b_topla);
         b_sehir = findViewById(R.id.sehir);
         b_odun = findViewById(R.id.b_odun);
@@ -312,16 +312,16 @@ public class anaekran extends AppCompatActivity {
                  //region Görev Tamalanmışsa
                    else
                    {
-                       medya= MediaPlayer.create(anaekran.this,R.raw.maden);
-                       medya.start();
-                       medya.release();
+                       medya2= MediaPlayer.create(anaekran.this,R.raw.maden);
+                       medya2.start();
+
                            Random random = new Random();
                            tas += random.nextInt(5) + 3;
                            if (tas > maxtas)
                                tas = maxtas;
                            g_yaz(g_tas, tas, maxtas);
                            kaynaklar.tas=tas;
-
+                           medya2.release();
                    }
                    //endregion
                }
@@ -330,7 +330,7 @@ public class anaekran extends AppCompatActivity {
         });
 //endregion
 //region Demirci
-            demirci.setOnClickListener(new View.OnClickListener() {
+            b_demirci.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (unlocks.kk == 0)
