@@ -110,7 +110,10 @@ public class anaekran extends AppCompatActivity {
             cheat.setVisibility(View.VISIBLE);
         else
             cheat.setVisibility(View.INVISIBLE);
-
+        if(unlocks.demirci==0)
+        {
+            b_demirci.setVisibility(View.VISIBLE);
+        }
         if (unlocks.kk == 0)
         {
             nesne.setBackgroundResource(R.drawable.m2);
