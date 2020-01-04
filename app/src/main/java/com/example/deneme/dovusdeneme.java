@@ -128,6 +128,7 @@ public void goster()
        dusman[i][1]=com.example.deneme.dusman.dusman[tip][2] + seviye*2;
        dusman[i][2]= com.example.deneme.dusman.dusman[tip][3];
         }
+        d_hp.setMax( dusman[dusmansayisi][0]);
     }
 //endregion
 
