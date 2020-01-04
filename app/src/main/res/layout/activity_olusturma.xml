@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wood"
     tools:context=".olusturma">
 
     <EditText
@@ -18,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.225" />
+        app:layout_constraintVertical_bias="0.285" />
 
     <Button
         android:id="@+id/okey"
@@ -47,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Sınıfınızı Seçin\n"
+            android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="30sp" />
 
@@ -74,4 +76,5 @@
             android:text="Büyücü     (+2 Zekâ)"
             android:textSize="25sp" />
     </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
