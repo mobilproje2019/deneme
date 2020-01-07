@@ -1,26 +1,26 @@
 <resources>
     <string name="app_name">deneme</string>
     <string name="g_siniflar">
-        \tWarrior, Assassin ve Mage olmak üzere 3 farklı sınıfımız bulunmaktadır. Her sınıfın kendine ait skill ve pasifleri bulunmaktadır. Ayrıca skill
-        pointleriniz başlangıçta seçtiğiniz sınıfa göre farklılık göstericektir.
-        \n\n\tWarrior: Fiziksel güce daha yatkın olan bu sınıf oyunda gücüm herşeye yeter diyenler için birebirdir.Genel yetenekleri güce dayalı olan bu sınıf
+        \tSavaşçı, Süikastçi ve Büyücü olmak üzere 3 farklı sınıfımız bulunmaktadır. Her sınıfın kendine ait yetenek ve pasifleri bulunmaktadır. Ayrıca yetenek puanlarınız
+        başlangıçta seçtiğiniz sınıfa göre farklılık göstericektir.
+        \n\n\tSavaşçı: Fiziksel güce daha yatkın olan bu sınıf oyunda gücüm herşeye yeter diyenler için birebirdir.Genel yetenekleri güce dayalı olan bu sınıf
         bazı kapıları kırabilme özelliğine sahiptir.
         \n\tPasifi: Canınız %15 in altındayken eksik canın %20 \'si kadar daha fazla hasar verir.
-        \n\tSkill: 3 turda bir rakibe ağır darbe vurarak 1 tur boyunca stunda kalmasını sağlar.
+        \n\tYetenek: 3 turda bir rakibe ağır darbe vurarak 1 tur boyunca stunda kalmasını sağlar.
 
         \n\n
 
-        \n\tAssassin: Çeviklik üzerine kurulu olan bu sınıf rakibi hızlı bir biçimde öldürmeye odaklıdır. Yüksek dodge ve crit yeteniği olmasına karşın
+        \n\tSüikastçi: Çeviklik üzerine kurulu olan bu sınıf rakibi hızlı bir biçimde öldürmeye odaklıdır. Yüksek dodge ve crit yeteniği olmasına karşın
         bir o kadar da kırılgandır. Kapıları maymuncukla açma yeteneğine sahiptir. Tuzaklardan kaçabilme oranı daha yüksektir.
         \n\tPasifi: CounterAttack %30 şansla rakibin saldırısından kaçıp rakibe kritik saldırıda bulunur.
-        \n\tSkill: 3 turda bir tüm rakiplere normal saldırının %30\' kadar hasar verirsin.
+        \n\tYetenek: 3 turda bir tüm rakiplere normal saldırının %30\' kadar hasar verirsin.
 
         \n\n
 
-        \n\tMage: Yıkım ve iyileştirme sanatlarında usta olan bu sınıf mistik güçleri sevenler için gayet tatmin edicidir. Fazladan tecrübe puanı kazanırlar
+        \n\tBüyücü: Yıkım ve iyileştirme sanatlarında usta olan bu sınıf mistik güçleri sevenler için gayet tatmin edicidir. Fazladan tecrübe puanı kazanırlar
         ve tüm yetenek güçleri seviyeye bağlı olarak fazladan hasar verir. Az canı ve defansı olduğu için oynanması zor bir sınıftır.
         \n\tPasifi: Büyülerden daha az hasar alır ve aldığı hasarın %20\'si kadar Manası dolar.
-        \n\tSkill: 2 Turda bir canın %5 i kadar iyileştirir.
+        \n\tYetenek: 2 Turda bir canın %5 i kadar iyileştirir.
 
         \n\n
 
