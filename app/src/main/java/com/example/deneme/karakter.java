@@ -18,7 +18,7 @@ public class karakter {
 
     public static int[][] resimler={
             {R.drawable.warriorpasif,R.drawable.warriors1,R.drawable.warriors2,R.drawable.warriors3,},
-            {R.drawable.assassinpasif,R.drawable.assassins1,R.drawable.assassins2,R.drawable.assassins3},
+            {R.drawable.assasinpasif,R.drawable.assassins1,R.drawable.assassins2,R.drawable.assassins3},
             {R.drawable.magepasif,R.drawable.mages1,R.drawable.mages2,R.drawable.mages3}
     };
     public  static String[][] aciklama={

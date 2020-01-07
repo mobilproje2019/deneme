@@ -1,16 +1,13 @@
 package com.example.deneme;
+
+import android.graphics.drawable.Drawable;
+
 public class Yetenekler {
-    public static String passive;
-    public static String passiveName;
     public static  int Skill_1CD;
     public static  int Skill_2CD;
     public static int Skill_3CD;
-    public static String Skill_1Name;
-    public static String Skill_2Name;
-    public static String Skill_3Name;
-    public static String Skill_1;
-    public static String Skill_2;
-    public static String Skill_3;
+    int sP;
+    int s1,s2,s3;
 
     public static int[] k=new int[3];
 
@@ -19,54 +16,40 @@ public class Yetenekler {
         initcharacter(karakter.pasif);
     }
     //region GET SET
-    public String getPassiveName() {
-        return passiveName;
+
+
+    public int getsP() {
+        return sP;
     }
-    public void setPassiveName(String passiveName) {
-        this.passiveName = passiveName;
+
+    public void setsP(int sP) {
+        this.sP = sP;
     }
-    public String getSkill_1() {
-        return Skill_1;
+
+    public int getS1() {
+        return s1;
     }
-    public void setSkill_1(String skill_1) {
-        Skill_1 = skill_1;
+
+    public void setS1(int s1) {
+        this.s1 = s1;
     }
-    public String getSkill_2() {
-        return Skill_2;
+
+    public int getS2() {
+        return s2;
     }
-    public void setSkill_2(String skill_2) {
-        Skill_2 = skill_2;
+
+    public void setS2(int s2) {
+        this.s2 = s2;
     }
-    public String getSkill_3() {
-        return Skill_3;
+
+    public int getS3() {
+        return s3;
     }
-    public void setSkill_3(String skill_3) {
-        Skill_3 = skill_3;
+
+    public void setS3(int s3) {
+        this.s3 = s3;
     }
-    public String getPassive() {
-        return passive;
-    }
-    public void setPassive(String passive) {
-        this.passive = passive;
-    }
-    public String getSkill_1Name() {
-        return Skill_1Name;
-    }
-    public void setSkill_1Name(String skill_1Name) {
-        Skill_1Name = skill_1Name;
-    }
-    public String getSkill_2Name() {
-        return Skill_2Name;
-    }
-    public void setSkill_2Name(String skill_2Name) {
-        Skill_2Name = skill_2Name;
-    }
-    public String getSkill_3Name() {
-        return Skill_3Name;
-    }
-    public void setSkill_3Name(String skill_3Name) {
-        Skill_3Name = skill_3Name;
-    }
+
     public int getSkill_1CD() {
         return Skill_1CD;
     }
@@ -89,44 +72,35 @@ public class Yetenekler {
     public  void initcharacter(int pasif){
         if(pasif==0)
         {
-            setPassiveName(karakter.aciklama[0][0]);
-            setPassive(karakter.aciklama[0][1]);
-            setSkill_1Name(karakter.aciklama[0][2]);
-            setSkill_1(karakter.aciklama[0][3]);
+
+          setsP(R.drawable.warriorpasif);
+          setS1(R.drawable.warriors1);
+          setS2(R.drawable.warriors2);
+          setS3(R.drawable.warriors3);
+
             setSkill_1CD(3);
-            setSkill_2Name(karakter.aciklama[0][4]);
-            setSkill_2(karakter.aciklama[0][5]);
+
             setSkill_2CD(4);
-            setSkill_3Name(karakter.aciklama[0][6]);
-            setSkill_3(karakter.aciklama[0][7]);
             setSkill_3CD(6);
         }
         else if(pasif==1)
         {
-            setPassiveName(karakter.aciklama[1][0]);
-            setPassive(karakter.aciklama[1][1]);
-            setSkill_1Name(karakter.aciklama[1][2]);
-            setSkill_1(karakter.aciklama[1][3]);
+            setsP(R.drawable.assasinpasif);
+            setS1(R.drawable.assassins1);
+            setS2(R.drawable.assassins2);
+            setS3(R.drawable.assassins3);
             setSkill_1CD(3);
-            setSkill_2Name(karakter.aciklama[1][4]);
-            setSkill_2(karakter.aciklama[1][5]);
             setSkill_2CD(5);
-            setSkill_3Name(karakter.aciklama[1][6]);
-            setSkill_3(karakter.aciklama[1][7]);
             setSkill_3CD(4);
         }
         else
         {
-            setPassiveName(karakter.aciklama[2][0]);
-            setPassive(karakter.aciklama[2][1]);
-            setSkill_1Name(karakter.aciklama[2][2]);
-            setSkill_1(karakter.aciklama[2][3]);
+            setsP(R.drawable.magepasif);
+            setS1(R.drawable.mages1);
+            setS2(R.drawable.mages2);
+            setS3(R.drawable.mages3);
             setSkill_1CD(2);
-            setSkill_2Name(karakter.aciklama[2][4]);
-            setSkill_2(karakter.aciklama[2][5]);
             setSkill_2CD(3);
-            setSkill_3Name(karakter.aciklama[2][6]);
-            setSkill_3(karakter.aciklama[2][7]);
             setSkill_3CD(6);
         }
     }
