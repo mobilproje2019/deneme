@@ -20,12 +20,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.088" />
+        app:layout_constraintVertical_bias="0.174" />
 
     <RadioGroup
         android:id="@+id/r_sinif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="330dp"
+        android:layout_height="336dp"
         android:checkedButton="@id/m0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,101 +44,79 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/imageView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:scaleType="fitStart"
-                    app:srcCompat="@drawable/warriorpasif" />
-
-                <RadioButton
-                    android:id="@+id/m0"
-                    style="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Savaşçı  \n (+2 Güç)"
-                    android:textColor="@android:color/white"
-                    android:textSize="25sp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                    app:srcCompat="@drawable/waspas" />
 
                 <ImageView
                     android:id="@+id/imageView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:scaleType="fitStart"
-                    app:srcCompat="@drawable/assasinpasif" />
-
-                <RadioButton
-                    android:id="@+id/m1"
-                    style="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Suikastçi\n  (+2 Çeviklik)"
-                    android:textColor="@android:color/white"
-                    android:textSize="25sp" />
-            </LinearLayout>
-        </LinearLayout>
+                    app:srcCompat="@drawable/asaspas" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/magepas" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:scaleType="fitStart"
-                    app:srcCompat="@drawable/magepasif" />
-
-                <RadioButton
-                    android:id="@+id/m2"
-                    style="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"
+                <RadioGroup
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Büyücü \n(+2 Zekâ)"
-                    android:textColor="@android:color/white"
-                    android:textSize="25sp" />
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" >
+
+                    <RadioButton
+                        android:id="@+id/m1"
+                        style="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Suikastçi\n(+2 Çeviklik)"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp" />
+
+                    <RadioButton
+                        android:id="@+id/m0"
+                        style="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Savaşçı\n(+2 Güç)"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp" />
+
+                    <RadioButton
+                        android:id="@+id/m2"
+                        style="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Büyücü\n(+2 Zekâ)"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp" />
+                </RadioGroup>
+
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
         </LinearLayout>
 
     </RadioGroup>
