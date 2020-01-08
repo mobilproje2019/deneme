@@ -405,6 +405,8 @@ i2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
     }
 });
 
+    dialog.show();
+
 }
 
     @Override
