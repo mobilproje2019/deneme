@@ -86,22 +86,22 @@
                     android:layout_weight="1" >
 
                     <RadioButton
-                        android:id="@+id/m1"
-                        style="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Suikastçi\n(+2 Çeviklik)"
-                        android:textColor="@android:color/white"
-                        android:textSize="25sp" />
-
-                    <RadioButton
                         android:id="@+id/m0"
                         style="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Savaşçı\n(+2 Güç)"
+                        android:textColor="@android:color/white"
+                        android:textSize="25sp" />
+
+                    <RadioButton
+                        android:id="@+id/m1"
+                        style="@android:style/Widget.Holo.Light.CompoundButton.RadioButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Suikastçi\n(+2 Çeviklik)"
                         android:textColor="@android:color/white"
                         android:textSize="25sp" />
 
