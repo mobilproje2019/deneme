@@ -1,7 +1,5 @@
 package com.example.deneme;
 
-import android.graphics.drawable.Drawable;
-
 public class Yetenekler {
     public static  int Skill_1CD;
     public static  int Skill_2CD;
