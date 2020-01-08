@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -14,11 +15,13 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Button;
+import android.widget.ToggleButton;
 
 import java.util.Random;
 import java.util.Timer;
@@ -34,6 +37,7 @@ public class anaekran extends AppCompatActivity {
     Button b_topla;
     Button b_uret;
     Button b_atolye;
+    Button b_info;
     Button cheat;
     Button b_maden;
     Button b_sehir;
@@ -147,6 +151,7 @@ public class anaekran extends AppCompatActivity {
 
     //region id bağdaştırımı
         fight=findViewById(R.id.btndovus);
+        b_info=findViewById(R.id.b_info);
         b_demirci=findViewById(R.id.demirci);
         b_topla = findViewById(R.id.b_topla);
         b_sehir = findViewById(R.id.sehir);
@@ -357,7 +362,50 @@ public class anaekran extends AppCompatActivity {
         });
         //endregion
 
+        //region
+        b_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMyCustomAlertDialog();
+            }
+        });
+        //endregion
+
     }
+public void showMyCustomAlertDialog()
+{
+    final Dialog dialog = new Dialog(anaekran.this);
+    dialog.setContentView(R.layout.custom_info);
+    ToggleButton i1 = dialog.findViewById(R.id.i1);
+    ToggleButton i2=  dialog.findViewById(R.id.i2);
+    final TextView i1t= (TextView) dialog.findViewById(R.id.i1t);
+    final TextView i2t= (TextView) dialog.findViewById(R.id.i2t);
+
+
+   i1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+       @Override
+       public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+           if(isChecked)
+           {
+               i1t.setText(R.string.i1t);
+           }
+           else
+           {
+               i1t.setText("");
+           }
+       }
+   });
+i2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if(isChecked)
+            i2t.setText(R.string.i2t);
+        else
+            i2t.setText("");
+    }
+});
+
+}
 
     @Override
     public void onBackPressed() {
