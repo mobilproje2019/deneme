@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ysaydamlogo"
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,9 +27,12 @@
                 android:id="@+id/i1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/gece"
                 android:text="Nasıl Oynanır"
+                android:textColor="@android:color/white"
                 android:textOff="Nasıl Oynanır"
-                android:textOn="Nasıl Oynanır" />
+                android:textOn="Nasıl Oynanır"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/i1t"
@@ -42,8 +47,11 @@
                 android:id="@+id/i2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/gece"
+                android:textColor="@android:color/white"
                 android:textOff="Sınıflar"
-                android:textOn="Sınıflar"></ToggleButton>
+                android:textOn="Sınıflar"
+                android:textSize="18sp"></ToggleButton>
 
             <TextView
                 android:id="@+id/i2t"
@@ -57,29 +65,37 @@
                 android:id="@+id/i3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/gece"
+                android:textColor="@android:color/white"
                 android:textOff="Yetenek Puanları"
-                android:textOn="Yetenek Puanları"></ToggleButton>
+                android:textOn="Yetenek Puanları"
+                android:textSize="18sp"></ToggleButton>
 
             <TextView
                 android:id="@+id/i3t"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black" />
 
             <ToggleButton
                 android:id="@+id/i4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/gece"
+                android:textColor="@android:color/white"
                 android:textOff="Dövüş Mekanikleri"
-                android:textOn="Dövüş Mekanikleri"></ToggleButton>
+                android:textOn="Dövüş Mekanikleri"
+                android:textSize="18sp"></ToggleButton>
 
             <TextView
                 android:id="@+id/i4t"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black" />
 
         </LinearLayout>
 
     </ScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

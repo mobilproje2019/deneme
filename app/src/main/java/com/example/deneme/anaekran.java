@@ -362,7 +362,7 @@ public class anaekran extends AppCompatActivity {
         });
         //endregion
 
-        //region
+        //region İnfo
         b_info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -381,6 +381,8 @@ public void showMyCustomAlertDialog()
     final TextView i1t= (TextView) dialog.findViewById(R.id.i1t);
     final TextView i2t= (TextView) dialog.findViewById(R.id.i2t);
 
+    i1t.setText("");
+    i2t.setText("");
 
    i1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
        @Override

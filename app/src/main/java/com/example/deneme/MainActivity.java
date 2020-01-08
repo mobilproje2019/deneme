@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle("ClickerRPG");
-        builder.setIcon(R.mipmap.ic_launcher_round);
+        builder.setIcon(R.mipmap.saydamlogo);
         builder.setCancelable(false);
         builder.setMessage("Uygulamadan çıkmak istediğinize emin misiniz?");
         builder.setNegativeButton("Hayır", null);
